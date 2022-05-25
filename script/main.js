@@ -47,3 +47,9 @@ const createCards = async (offset = 0,tag = "", platform = "all", sort = "releva
     pages++;
 }
 createCards(0);
+
+window.onscroll = function(e) {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        createCards(pages);
+    }
+};
