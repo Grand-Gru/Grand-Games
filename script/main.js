@@ -16,7 +16,7 @@ const createCard = data => { // cria o card e coloca a thumbmail
             <h1 class="title">${data.title}</h1>
         </a>
     `;
-    document.getElementById(data.id).style.backgroundImage = 'url(' + data.thumbnail +')'
+    document.getElementById(data.id).style.backgroundImage = 'url(' + data.thumbnail +')';
 }
 
 const requestGames = async (params = "") => { // faz o request dos dados
@@ -32,7 +32,8 @@ const createBanner = data => {// altera o banner
     document.getElementById("banner").href = data.game_url;
 }
 
-const createCards = async (offset = 0,tag = "", platform = "all", sort = "relevance") => {
+let createCards 
+(createCards = async (offset = 0,tag = "", platform = "all", sort = "relevance") => {
     const gamesData = await requestGames(createParams(tag, platform, sort));
     if(offset === 0){
         createBanner(gamesData[0]);
@@ -45,5 +46,11 @@ const createCards = async (offset = 0,tag = "", platform = "all", sort = "releva
         createCard(gamesData[position]);
     }
     pages++;
-}
-createCards(0);
+
+})();
+
+window.onscroll = function(e) {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        createCards(pages);
+    }
+};
