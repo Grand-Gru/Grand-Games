@@ -49,11 +49,11 @@ let createCards
 
 })();
 
-let ok =true
-window.onscroll = function(e) {
-   if ((window.innerHeight + window.scrollY + 100) >= document.body.offsetHeight && ok) {
-       ok = false;
-        createCards(pages);
-        ok = true;
-    } 
+let ok = true
+window.onscroll = async function(e) {
+    if ((window.innerHeight + window.scrollY + 100) >= document.body.offsetHeight && ok) {
+        ok = false
+        await createCards(pages);
+        ok = true
+    }
 };
