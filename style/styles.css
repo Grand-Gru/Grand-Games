@@ -1,11 +1,361 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    height:9.25vh;
+    background: linear-gradient(270deg, #531877 -0.21%, #0F0416 100.14%);
+}
+
+.flex-header {
+    display: flex;
+    height: 9.25vh;
+}
+.controller{
+    position: relative;
+    top: 6%;
+}
+.header-title .games{
+    margin-left: 41%;
+}
+.header-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: -2.4%;
+}
+
+.header-title span{
+    font-family: 'Play';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 80%;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: -2%;
+}
+
+.header-options{
+    width: 83.51vh;
+    display: flex;
+    justify-content: center;
+    padding-left: 30%;
+    align-items: center;
+}
+.header-options span{
+    font-family: 'Play';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.header-option-1{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding-right: 25%;
+}
+
+.PC{
+    cursor: pointer;
+    background: red;
+    width: 35%;
+    height: 2.5vw;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    margin: 0px
 }
 
+
+.browser{
+    cursor: pointer;
+    background: red;
+    width: 45%;
+    height: 2.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-option-2{
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    justify-content: space-between;
+}
+hr{
+    border: none;
+    box-shadow:
+    0 0 0.1vw  0.11vw #fff7f7,   
+    0 0 0.4vw 0.3vw #fb37ff,
+    0 0   4vw  0.4vw #320036b3,
+    0 0   4vw  0.4vw #8a1059cc,
+  
+    inset 0 0 1.5vw  0.4vw #FB37FF,
+    inset 0 0 1.5vw  0.4vw #320036b3,
+    inset 0 0 0.4vw  0.2vw #8a1059cc,
+    inset 0 0 0.5vw  0.2vw #fff7f7;
+    width: 100%;
+    position: relative;
+    bottom: 0.55vw;
+}
+
+.side-bar{
+    display: flex;
+    width: 20.4%;
+    background-image: url("/Grand-Games/img/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #5c5c5c;
+
+}
+
+.side-bar-itens{
+    display: flex;
+    width: 100%;
+    height: 41.77vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 1.5vw;
+
+}
+
+.border-line{
+    width: 0;
+
+
+    box-shadow:
+    0 0 0.1vw  0.11vw #fff7f7,   
+    0 0.3vw 0.4vw 0.3vw #fb37ff,
+    0 0   4vw  0.4vw #320036b3,
+    0 0   4vw  0.4vw #8a1059cc,
+  
+    inset 0 0 1.5vw  0.4vw #FB37FF,
+    inset 0 0 1.5vw  0.4vw #320036b3,
+    inset 0 0 0.4vw  0.2vw #8a1059cc,
+    inset 0 0 0.5vw  0.2vw #fff7f7;
+    align-items: flex-end;
+}
+.side-bar-itens span{
+    font-family: 'Play';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.3rem;
+    line-height: 150%;
+    color: #FFFFFF;
+}
+
+.side-bar-itens img{
+    width: 50%;
+}
+ .itens-container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.button-home{
+
+    cursor: pointer;
+    background: none;
+    width: 85%;
+    height: 4.1vw;
+    display: flex;
+    align-items: center;
+}
+
+.button-home:hover{
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+    0 0 0.1vw  0.12vw #FFFFFF,
+    0 0 0.5vw  0.2vw #00D1FF,
+    0 0 0.7vw  0.2vw#0085FF,
+
+    inset 0 0 0.1vw  0.1vw #fff7f7,
+    inset 0 0 1vw  0.1vw #00D1FF,
+    inset 0 0 4vw  0.2vw#0085FF;
+}
+
+.button-pixel{
+
+    cursor: pointer;
+    background: none;
+    width: 85%;
+    height: 4.1vw;
+    display: flex;
+    align-items: center;
+}
+
+.button-pixel:hover{
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+    0 0 0.1vw  0.12vw #FFFFFF,
+    0 0 0.5vw  0.2vw #FFE600,
+    0 0 0.7vw  0.2vw#FFE600,
+
+    inset 0 0 0.1vw  0.1vw #fff7f7,
+    inset 0 0 1vw  0.1vw #FFE600,
+    inset 0 0 4vw  0.2vw#FFF500;
+}
+
+.button-space{
+
+    cursor: pointer;
+    background: none;
+    width: 85%;
+    height: 4.1vw;
+    display: flex;
+    align-items: center;
+}
+
+.button-space:hover{
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+    0 0 0.1vw  0.12vw #FFFFFF,
+    0 0 0.5vw  0.2vw #05FF00,
+    0 0 0.7vw  0.2vw#24FF00,
+
+    inset 0 0 0.1vw  0.1vw #fff7f7,
+    inset 0 0 1vw  0.1vw #05FF00,
+    inset 0 0 4vw  0.2vw#24FF00;
+}
+
+.button-flighting{
+
+    cursor: pointer;
+    background: none;
+    width: 85%;
+    height: 4.1vw;
+    display: flex;
+    align-items: center;
+}
+
+.button-flighting:hover{
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+    0 0 0.1vw  0.12vw #FFFFFF,
+    0 0 0.5vw  0.2vw #FF00A8,
+    0 0 0.7vw  0.2vw#FF003D,
+
+    inset 0 0 0.1vw  0.1vw #fff7f7,
+    inset 0 0 1vw  0.1vw #FF00A8,
+    inset 0 0 4vw  0.2vw#FF003D;
+}
+
+.button-mmorpg{
+
+    cursor: pointer;
+    background: none;
+    width: 85%;
+    height: 4.1vw;
+    display: flex;
+    align-items: center;
+}
+
+.button-mmorpg:hover{
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+    0 0 0.1vw  0.12vw #FFFFFF,
+    0 0 0.5vw  0.2vw #FFB800,
+    0 0 0.7vw  0.2vw#FF8A00,
+
+    inset 0 0 0.1vw  0.1vw #fff7f7,
+    inset 0 0 1vw  0.1vw #FFB800,
+    inset 0 0 4vw  0.2vw#FF8A00;
+}
+
+.button-sci-fi{
+
+    cursor: pointer;
+    background: none;
+    width: 85%;
+    height: 4.1vw;
+    display: flex;
+    align-items: center;
+}
+
+.button-sci-fi:hover{
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+    0 0 0.1vw  0.12vw #FFFFFF,
+    0 0 0.5vw  0.2vw #AD00FF,
+    0 0 0.7vw  0.2vw#8000FF,
+
+    inset 0 0 0.1vw  0.1vw #fff7f7,
+    inset 0 0 1vw  0.1vw #AD00FF,
+    inset 0 0 4vw  0.2vw#8000FF;
+}
+
+.button-shooting{
+
+    cursor: pointer;
+    background: none;
+    width: 85%;
+    height: 4.1vw;
+    display: flex;
+    align-items: center;
+}
+
+.button-shooting:hover{
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+    0 0 0.1vw  0.12vw #FFFFFF,
+    0 0 0.5vw  0.2vw #FF0F00,
+    0 0 0.7vw  0.2vw#FF0000,
+
+    inset 0 0 0.1vw  0.1vw #fff7f7,
+    inset 0 0 1vw  0.1vw #FF0F00,
+    inset 0 0 4vw  0.2vw#FF0000;
+}
+
+.button-horror{
+
+    cursor: pointer;
+    background: none;
+    width: 85%;
+    height: 4.1vw;
+    display: flex;
+    align-items: center;
+}
+
+.button-horror:hover{
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+    0 0 0.1vw  0.12vw #FFFFFF,
+    0 0 0.5vw  0.2vw #595959,
+    0 0 0.7vw  0.2vw#7B7B7B,
+
+    inset 0 0 0.1vw  0.1vw #fff7f7,
+    inset 0 0 1vw  0.1vw #595959,
+    inset 0 0 4vw  0.2vw#7B7B7B;
+}
+
+button{
+    border: hidden;
+
+}
 #banner{
     width: 73%;
     height: 400px;
@@ -26,4 +376,8 @@ body{
     width: 292px;
     height: 197px;
     border-radius: 30px;
+}
+
+.home-page{
+    display: flex;
 }

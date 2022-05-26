@@ -49,9 +49,12 @@ let createCards
 
 })();
 
-window.onscroll = function(e) {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        createCards(pages);
+let ok = true
+window.onscroll = async function(e) {
+    if ((window.innerHeight + window.scrollY + 100) >= document.body.offsetHeight && ok) {
+        ok = false
+        await createCards(pages);
+        ok = true
     }
 };
 
