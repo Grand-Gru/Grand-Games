@@ -1,5 +1,7 @@
 "use strict";
 
+import { gamesInfo } from "./gameCards.js";
+
 var pages = 0;
 
 const options = { // Declaração das cahves para RapidAPI
@@ -32,8 +34,7 @@ const createBanner = data => {// altera o banner
     document.getElementById("banner").href = data.game_url;
 }
 
-let createCards 
-(createCards = async (offset = 0,tag = "", platform = "all", sort = "relevance") => {
+const createCards = async (offset = 0,tag = "", platform = "all", sort = "relevance") => {
     const gamesData = await requestGames(createParams(tag, platform, sort));
     if(offset === 0){
         createBanner(gamesData[0]);
@@ -47,11 +48,12 @@ let createCards
     }
     pages++;
 
-})();
+};
 
 window.onscroll = function(e) {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
         createCards(pages);
     }
 };
+
 
