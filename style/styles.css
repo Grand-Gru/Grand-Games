@@ -43,10 +43,11 @@ header {
 }
 
 .header-options{
-    width: 53.51vh;
+    width: 83.51vh;
     display: flex;
     justify-content: center;
     padding-left: 30%;
+    align-items: center;
 }
 .header-options span{
     font-family: 'Play';
@@ -62,10 +63,32 @@ header {
 .header-option-1{
     display: flex;
     flex-direction: row;
-    width: 40%;
+    width: 100%;
     justify-content: space-between;
     padding-right: 25%;
 }
+
+.PC{
+    cursor: pointer;
+    background: red;
+    width: 35%;
+    height: 2.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.browser{
+    cursor: pointer;
+    background: red;
+    width: 45%;
+    height: 2.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .header-option-2{
     display: flex;
     flex-direction: row;
@@ -93,6 +116,7 @@ hr{
     display: flex;
     width: 20.4%;
     background-image: url("/Grand-Games/img/background.png");
+    background-repeat: no-repeat;
     background-size: cover;
     background-color: #5c5c5c;
 
@@ -357,5 +381,3 @@ button{
 .home-page{
     display: flex;
 }
-
-
