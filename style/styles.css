@@ -2,7 +2,6 @@
 html,body{
     margin: 0;
     padding: 0;
-    height: 100%;
 }
 
 header {
@@ -93,7 +92,6 @@ hr{
 .side-bar{
     display: flex;
     width: 20.4%;
-    height: 100%;
     background-image: url("/Grand-Games/img/background.png");
     background-size: cover;
     background-color: #5c5c5c;
@@ -358,7 +356,6 @@ button{
 
 .home-page{
     display: flex;
-    height: 100%;
 }
 
 

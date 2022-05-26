@@ -50,7 +50,7 @@ let createCards
 })();
 
 window.onscroll = function(e) {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+   if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
         createCards(pages);
-    }
+    } 
 };
