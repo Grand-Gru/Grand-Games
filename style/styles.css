@@ -114,10 +114,9 @@ hr{
 
 .side-bar{
     display: flex;
-    width: 20.4%;
+    width: 25.4%;
     background-image: url("/Grand-Games/img/background.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% auto;
     background-color: #5c5c5c;
 
 }
@@ -356,15 +355,57 @@ button{
     border: hidden;
 
 }
-#banner{
-    width: 73%;
-    height: 400px;
-    text-decoration: none;
-    background: #C4C4C4;
-    background-attachment: fixed;
-    background-repeat:no-repeat;
-    background-size: 100%;
+
+
+.banner-section{
+    width: 100%;
 }
+#banner{
+    height: 70vh;
+    background: #C4C4C4;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    z-index: -1;
+}
+
+#banner .game-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 48.8vh;
+    padding-left: 1.4vw;
+}
+#banner .game-title{
+    font-family: 'Play';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 110%;
+    text-align: right;
+    color: #FFFFFF;
+}
+
+#banner .game-desciption{
+    font-family: 'Play';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 150%;
+    color: #FFFFFF;
+    padding-left: 1vw;
+}
+
+#banner .developer{
+    font-family: 'Play';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 150%;
+    color: #FFFFFF;
+    padding-left: 64vw;
+}
+
 #games{
     display: grid;
     grid-template-columns: auto auto auto;
