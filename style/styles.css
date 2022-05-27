@@ -6,7 +6,7 @@ html,body{
 
 header {
     width: 100%;
-    height:9.25vh;
+    height: 10.25vh;
     background: linear-gradient(270deg, #531877 -0.21%, #0F0416 100.14%);
 }
 
@@ -109,7 +109,7 @@ hr{
     inset 0 0 0.5vw  0.2vw #fff7f7;
     width: 100%;
     position: relative;
-    bottom: 0.55vw;
+    bottom: 0.05vw;
 }
 
 .side-bar{
@@ -367,6 +367,9 @@ button{
     background-size: 100%;
     position: relative;
     z-index: -1;
+    box-shadow:  
+    inset 0 0 7vw 1.5vw #d9d9d936, 
+    inset 0 0 20vw 2vw #000000;
 }
 
 #banner .game-info{
