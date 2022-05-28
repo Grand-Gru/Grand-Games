@@ -12,10 +12,13 @@ const options = { // Declaração das cahves para RapidAPI
 
 const createCard = data => { // cria o card e coloca a thumbmail
     document.getElementById("games").innerHTML += `
-    
-        <a class="card" id="${data.id}" href="${data.game_url}">
-            <h1 class="title">${data.title}</h1>
-        </a>
+    <div class = "mini-banner">
+        <a class="card" id="${data.id}" href="${data.game_url}"></a>
+        <span class="release-date">${data.release_date}</span>   
+        <img class="star" src="./img/star.png" alt="star">
+        <h1 class="title">${data.title}</h1>
+        <span class="description">${data.short_description}</span>   
+    </div>
     `;
     document.getElementById(data.id).style.backgroundImage = 'url(' + data.thumbnail +')';
 }
