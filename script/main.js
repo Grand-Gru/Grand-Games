@@ -12,6 +12,7 @@ const options = { // Declaração das cahves para RapidAPI
 
 const createCard = data => { // cria o card e coloca a thumbmail
     document.getElementById("games").innerHTML += `
+    
         <a class="card" id="${data.id}" href="${data.game_url}">
             <h1 class="title">${data.title}</h1>
         </a>

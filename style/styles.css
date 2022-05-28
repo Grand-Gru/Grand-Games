@@ -365,7 +365,7 @@ button{
 
 }
 #banner{
-    height: 70vh;
+    height: 68.8vh;
     background: #C4C4C4;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -412,6 +412,12 @@ button{
     padding-left: 64vw;
 }
 
+.game-line{
+    padding-top: 5vh;
+    padding-left: 1vw;
+    padding-bottom: 1vh;
+}
+
 .game-line span{
     font-family: 'Play';
     font-style: normal;
@@ -422,8 +428,9 @@ button{
     padding-left: 2.3vw;
 }
 .game-line hr{
-    width: 74vw;
+    width: 72vw;
     margin-top: 0;
+    margin-left: 2.5vw;
     border: none;
     box-shadow:
     0 0 0.1vw  0.11vw #fff7f7,   
@@ -441,7 +448,8 @@ button{
 #games{
     display: grid;
     grid-template-columns: auto auto auto;
-    justify-content: space-between;
+    justify-content: space-around;
+
 }
 
 .card{
