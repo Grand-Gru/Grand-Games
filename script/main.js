@@ -25,7 +25,6 @@ const createCard = data => { // cria o card e coloca a thumbmail
 }
 
 
-
 const requestGames = async (params = "") => { // faz o request dos dados
     const response = await fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games${params}`, options);
     return await response.json();
