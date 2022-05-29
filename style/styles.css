@@ -477,7 +477,7 @@ button{
     line-height: 150%;
     color: #FFFFFF;
     margin-bottom: 0;
-    margin-top: 1vh;
+    margin-top: -4.4vh;
     margin-left: 1vw;
 }
 .description{
@@ -502,23 +502,28 @@ button{
 
 .home-page{
     display: flex;
+    
 }
 
+.star-button{
+    position: relative;
+    background-color: #321245;
+    width: 3vw;
+    height: 6vh;
+    left: 17vw;
+    top: 0vw;
+}
 .star{
-    width: 2vw;
-    position: absolute;
-    margin-top: 30vh;
-    margin-left: 18.3vw;
-
-
+    width: 5vw;
+    height: 10vh;
+    position: relative;
+    background-image: url("../img/star.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    left: 33.5vh;
 }
+
 .star:hover{
-    box-shadow:
-
-    0 0 1vw 0.3vw #240a33,
-    0 0 4vw 0.3vw #8a1059cc,
-  
-
-    inset 0 0 2vw 0.3vw #240a33,
-    inset 0 0 0.4vw  0.3vw #8a1059cc;
+    background-image: url("../img/star-hover.png")
 }
+
