@@ -6,11 +6,7 @@ html,body{
 
 header {
     width: 100%;
-<<<<<<< HEAD
-    height:9.25vh;
-=======
     height: 10.25vh;
->>>>>>> edb21618b5104ee79f51ea37dad446a3e2452953
     background: linear-gradient(270deg, #531877 -0.21%, #0F0416 100.14%);
 }
 
@@ -38,59 +34,6 @@ header {
     font-weight: 700;
     font-size: 1rem;
     line-height: 80%;
-<<<<<<< HEAD
-    display: flex;
-    align-items: center;
-    color: #FFFFFF;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: -2%;
-}
-
-.header-options{
-    width: 83.51vh;
-    display: flex;
-    justify-content: center;
-    padding-left: 30%;
-    align-items: center;
-}
-.header-options span{
-    font-family: 'Play';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.125rem;
-    line-height: 150%;
-    display: flex;
-    align-items: center;
-    color: #FFFFFF;
-}
-
-.header-option-1{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-    padding-right: 25%;
-}
-
-.PC{
-    cursor: pointer;
-    background: red;
-    width: 35%;
-    height: 2.5vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.browser{
-    cursor: pointer;
-    background: red;
-    width: 45%;
-    height: 2.5vw;
-=======
->>>>>>> edb21618b5104ee79f51ea37dad446a3e2452953
     display: flex;
     align-items: center;
     color: #FFFFFF;
@@ -103,17 +46,6 @@ header {
     width: 40.51vw;
     display: flex;
     justify-content: center;
-<<<<<<< HEAD
-}
-
-.header-option-2{
-    display: flex;
-    flex-direction: row;
-    width: 40%;
-    justify-content: space-between;
-}
-hr{
-=======
     padding-left: 30%;
     align-items: center;
 }
@@ -154,7 +86,6 @@ header button:hover{
 .header-neon{
     position: relative;
     z-index: 2;
->>>>>>> edb21618b5104ee79f51ea37dad446a3e2452953
     border: none;
     box-shadow:
     0 0 0.1vw  0.11vw #fff7f7,   
@@ -167,28 +98,15 @@ header button:hover{
     inset 0 0 0.4vw  0.2vw #8a1059cc,
     inset 0 0 0.5vw  0.2vw #fff7f7;
     width: 100%;
-<<<<<<< HEAD
-    position: relative;
-    bottom: 0.55vw;
-=======
     bottom: 0.05vw;
->>>>>>> edb21618b5104ee79f51ea37dad446a3e2452953
 }
 
 .side-bar{
     display: flex;
-<<<<<<< HEAD
-    width: 20.4%;
-    background-image: url("/Grand-Games/img/background.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #5c5c5c;
-=======
     width: 25.4%;
     background-image: url("/Grand-Games/img/background.png");
     background-size: 100% auto;
     background-color: #15081D;
->>>>>>> edb21618b5104ee79f51ea37dad446a3e2452953
 
 }
 
@@ -205,12 +123,8 @@ header button:hover{
 
 .border-line{
     width: 0;
-<<<<<<< HEAD
-
-=======
     position: relative;
     z-index: 1;
->>>>>>> edb21618b5104ee79f51ea37dad446a3e2452953
 
     box-shadow:
     0 0 0.1vw  0.11vw #fff7f7,   
@@ -241,196 +155,6 @@ header button:hover{
     align-items: center;
     width: 100%;
     justify-content: center;
-<<<<<<< HEAD
-}
-
-.button-home{
-
-    cursor: pointer;
-    background: none;
-    width: 85%;
-    height: 4.1vw;
-    display: flex;
-    align-items: center;
-}
-
-.button-home:hover{
-    background: none;
-    border-radius: 1vw;
-    box-shadow:
-    0 0 0.1vw  0.12vw #FFFFFF,
-    0 0 0.5vw  0.2vw #00D1FF,
-    0 0 0.7vw  0.2vw#0085FF,
-
-    inset 0 0 0.1vw  0.1vw #fff7f7,
-    inset 0 0 1vw  0.1vw #00D1FF,
-    inset 0 0 4vw  0.2vw#0085FF;
-}
-
-.button-pixel{
-
-    cursor: pointer;
-    background: none;
-    width: 85%;
-    height: 4.1vw;
-    display: flex;
-    align-items: center;
-}
-
-.button-pixel:hover{
-    background: none;
-    border-radius: 1vw;
-    box-shadow:
-    0 0 0.1vw  0.12vw #FFFFFF,
-    0 0 0.5vw  0.2vw #FFE600,
-    0 0 0.7vw  0.2vw#FFE600,
-
-    inset 0 0 0.1vw  0.1vw #fff7f7,
-    inset 0 0 1vw  0.1vw #FFE600,
-    inset 0 0 4vw  0.2vw#FFF500;
-}
-
-.button-space{
-
-    cursor: pointer;
-    background: none;
-    width: 85%;
-    height: 4.1vw;
-    display: flex;
-    align-items: center;
-}
-
-.button-space:hover{
-    background: none;
-    border-radius: 1vw;
-    box-shadow:
-    0 0 0.1vw  0.12vw #FFFFFF,
-    0 0 0.5vw  0.2vw #05FF00,
-    0 0 0.7vw  0.2vw#24FF00,
-
-    inset 0 0 0.1vw  0.1vw #fff7f7,
-    inset 0 0 1vw  0.1vw #05FF00,
-    inset 0 0 4vw  0.2vw#24FF00;
-}
-
-.button-flighting{
-
-    cursor: pointer;
-    background: none;
-    width: 85%;
-    height: 4.1vw;
-    display: flex;
-    align-items: center;
-}
-
-.button-flighting:hover{
-    background: none;
-    border-radius: 1vw;
-    box-shadow:
-    0 0 0.1vw  0.12vw #FFFFFF,
-    0 0 0.5vw  0.2vw #FF00A8,
-    0 0 0.7vw  0.2vw#FF003D,
-
-    inset 0 0 0.1vw  0.1vw #fff7f7,
-    inset 0 0 1vw  0.1vw #FF00A8,
-    inset 0 0 4vw  0.2vw#FF003D;
-}
-
-.button-mmorpg{
-
-    cursor: pointer;
-    background: none;
-    width: 85%;
-    height: 4.1vw;
-    display: flex;
-    align-items: center;
-}
-
-.button-mmorpg:hover{
-    background: none;
-    border-radius: 1vw;
-    box-shadow:
-    0 0 0.1vw  0.12vw #FFFFFF,
-    0 0 0.5vw  0.2vw #FFB800,
-    0 0 0.7vw  0.2vw#FF8A00,
-
-    inset 0 0 0.1vw  0.1vw #fff7f7,
-    inset 0 0 1vw  0.1vw #FFB800,
-    inset 0 0 4vw  0.2vw#FF8A00;
-}
-
-.button-sci-fi{
-
-    cursor: pointer;
-    background: none;
-    width: 85%;
-    height: 4.1vw;
-    display: flex;
-    align-items: center;
-}
-
-.button-sci-fi:hover{
-    background: none;
-    border-radius: 1vw;
-    box-shadow:
-    0 0 0.1vw  0.12vw #FFFFFF,
-    0 0 0.5vw  0.2vw #AD00FF,
-    0 0 0.7vw  0.2vw#8000FF,
-
-    inset 0 0 0.1vw  0.1vw #fff7f7,
-    inset 0 0 1vw  0.1vw #AD00FF,
-    inset 0 0 4vw  0.2vw#8000FF;
-}
-
-.button-shooting{
-
-    cursor: pointer;
-    background: none;
-    width: 85%;
-    height: 4.1vw;
-    display: flex;
-    align-items: center;
-}
-
-.button-shooting:hover{
-    background: none;
-    border-radius: 1vw;
-    box-shadow:
-    0 0 0.1vw  0.12vw #FFFFFF,
-    0 0 0.5vw  0.2vw #FF0F00,
-    0 0 0.7vw  0.2vw#FF0000,
-
-    inset 0 0 0.1vw  0.1vw #fff7f7,
-    inset 0 0 1vw  0.1vw #FF0F00,
-    inset 0 0 4vw  0.2vw#FF0000;
-}
-
-.button-horror{
-
-    cursor: pointer;
-    background: none;
-    width: 85%;
-    height: 4.1vw;
-    display: flex;
-    align-items: center;
-}
-
-.button-horror:hover{
-    background: none;
-    border-radius: 1vw;
-    box-shadow:
-    0 0 0.1vw  0.12vw #FFFFFF,
-    0 0 0.5vw  0.2vw #595959,
-    0 0 0.7vw  0.2vw#7B7B7B,
-
-    inset 0 0 0.1vw  0.1vw #fff7f7,
-    inset 0 0 1vw  0.1vw #595959,
-    inset 0 0 4vw  0.2vw#7B7B7B;
-}
-
-button{
-    border: hidden;
-=======
 }
 
 .button-home{
@@ -626,7 +350,6 @@ button{
 .banner-section{
     width: 100%;
     background-color: #15081D;
->>>>>>> edb21618b5104ee79f51ea37dad446a3e2452953
 
 }
 #banner{
@@ -760,22 +483,13 @@ button{
 
 .card{
     text-decoration: none;
-<<<<<<< HEAD
-    width: 292px;
-    height: 197px;
-    border-radius: 30px;
-=======
     width: 21vw;
     height: 28vh;
     border-radius: 1vw;
->>>>>>> edb21618b5104ee79f51ea37dad446a3e2452953
 }
 
 .home-page{
     display: flex;
-<<<<<<< HEAD
-}
-=======
     
 }
 
@@ -796,4 +510,3 @@ button{
     background-image: url("../img/star-hover.png")
 }
 
->>>>>>> edb21618b5104ee79f51ea37dad446a3e2452953
