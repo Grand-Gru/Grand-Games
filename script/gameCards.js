@@ -20,15 +20,15 @@ const createBanner = data => {// altera o banner
 }
 
 
-const filterGamesInfo = async (tag, platform, sortMethod) => {
+const filterGamesInfo = async (tag, sortMethod, platform) => { // filtra as informações do jogo
     let gamesInfo = GAMES_DATA;
     if (sortMethod) {
-        if(!gamesInfo[0].sort[sortMethod])
+        if(!gamesInfo[0].order[sortMethod])
             await saveGamesInfoSort(sortMethod);
-        gamesInfo = GAMES_DATA.sort((a, b) => a.sort[sortMethod] - b.sort[sortMethod]);
+        gamesInfo = GAMES_DATA.sort((a, b) => a.order[sortMethod] - b.order[sortMethod]);
     }
     if((tag || platform) && tag !== "home")
-        gamesInfo = gamesInfo.filter(gameInfo => (gameInfo.tag === tag || !tag) && (gameInfo.platform === platform || !platform))
+        gamesInfo = gamesInfo.filter(gameInfo => (gameInfo.tag === tag || !tag) && (gameInfo.platform === platform || !platform));
     return gamesInfo;
 }
 
@@ -40,9 +40,10 @@ async function* infoController(tag, sortMethod, platform){
         if(i%9 === 0) yield;
     }
 }
-const generateElements = infoController();
+var generateElements = infoController();
+
 export const createElements = async (tag, sortMethod, platform) => {
     if(tag || sortMethod || platform) 
         generateElements = infoController(tag, sortMethod, platform);
-    generateElements.next();
+    await generateElements.next();
 }   
