@@ -1,54 +1,45 @@
-export const gamesInfo = {};
-const options = { // Declaração das cahves para RapidAPI
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com',
-        'X-RapidAPI-Key': '03c090ac21msh4e7ac00b13dc67cp13104fjsn56d1012cf8b6'
-    }
-};
+"use strict";
 
-async function requestInfos(tag, sort) {
-    let params = `?platform=all&sort-by=${sort}${tag != "home" ? `&category=${tag}` : ``}`
-    try {
-        const response = await fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games${params}`, options);
-        return await response.json();
-    } catch (error) {
+import {GAMES_DATA, saveGamesInfoSort} from "./gameData.js";
 
-    }
-};
-
-async function requestGameInfo(id) {
-    try {
-        const url = `https://free-to-play-games-database.p.rapidapi.com/api/game?id=${id}`
-        const response = await fetch(url, options);
-        return await response.json();
-    } catch (error) {
-
-    }
+const createCard = data => { // cria o card e coloca a thumbmail
+    document.getElementById("games").innerHTML += `
+        <a class="card" id="${data.id}" href="${data.game_url}">
+            <h1 class="title">${data.title}</h1>
+        </a>
+    `;
+    document.getElementById(data.id).style.backgroundImage = 'url(' + data.thumbnail +')';
 }
 
-async function getTagSelectedList() {
-    const tag = "home";
-    const sort = "popularity";
-    const platform = "all";
-
-    if (!gamesData?.[tag]?.[sort]) {
-        gamesData[tag][sort] = await requestInfos(tag, sort);
-        if (gamesData[tag][sort][0])
-            gamesData[tag][sort][0] = await requestGameInfo(gamesData[tag][sort][0].id);
-    }
-    if (platform === "all")
-        return gamesData[tag][sort];
-    return gamesData[tag][sort].include()
-
+const createBanner = data => {// altera o banner
+    document.getElementById("banner").style.backgroundImage = 'url(' + data.thumbnail.replace("thumbnail.jpg","background.webp") +')';
+    document.getElementById("banner").href = data.game_url;
 }
-export async function* createCards() {
-    createBanner();
-    for (let i = 1; i < gamesData.length; i++) {
-        createCard(getTagSelectedList());
-        if (i % 9) yield;
+
+
+const filterGamesInfo = async (tag, platform, sortMethod) => {
+    let gamesInfo = GAMES_DATA;
+    if (sortMethod) {
+        if(!gamesInfo[0].sort[sortMethod])
+            await saveGamesInfoSort(sortMethod);
+        gamesInfo = GAMES_DATA.sort((a, b) => a.sort[sortMethod] - b.sort[sortMethod]);
     }
-};
+    if((tag || platform) && tag !== "home")
+        gamesInfo = gamesInfo.filter(gameInfo => (gameInfo.tag === tag || !tag) && (gameInfo.platform === platform || !platform))
+    return gamesInfo;
+}
 
-
-gamesInfo["home"]["popularity"] = await requestInfos();
+async function* infoController(tag, sortMethod, platform){
+    let gamesInfo = await filterGamesInfo(tag, sortMethod, platform);
+    createBanner(gamesInfo[0]);
+    for (let i = 1; i < gamesInfo.length; i++) {
+        createCard(gamesInfo[i]);
+        if(i%9 === 0) yield;
+    }
+}
+const generateElements = infoController();
+export const createElements = async (tag, sortMethod, platform) => {
+    if(tag || sortMethod || platform) 
+        generateElements = infoController(tag, sortMethod, platform);
+    generateElements.next();
+}   
