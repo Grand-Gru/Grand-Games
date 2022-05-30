@@ -4,11 +4,14 @@ import {GAMES_DATA, saveGamesInfoSort} from "./gameData.js";
 
 const createCard = data => { // cria o card e coloca a thumbmail
     document.getElementById("games").innerHTML += `
-        <a class="card" id="${data.id}" href="${data.game_url}">
-            <h1 class="title">${data.title}</h1>
-        </a>
-    `;
-    document.getElementById(data.id).style.backgroundImage = 'url(' + data.thumbnail +')';
+    <div class = "mini-banner">
+        <a href="${data.game_url}"> <img src="${data.thumbnail}"  class="card"> </a>
+
+        <span class="release-date">${data.release_date}</span>   
+        <div class="star" id="star ${data.id}"> </div>
+        <h1 class="title">${data.title}</h1>
+        <span class="description">${data.short_description}</span>   
+    </div>`;
 }
 
 const createBanner = data => {// altera o banner
