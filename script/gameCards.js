@@ -6,11 +6,16 @@ const createCard = data => { // cria o card e coloca a thumbmail
     document.getElementById("games").innerHTML += `
     <div class = "mini-banner">
         <a href="${data.game_url}"> <img src="${data.thumbnail}"  class="card"> </a>
-
-        <span class="release-date">${data.release_date}</span>   
-        <div class="star" id="star ${data.id}"> </div>
-        <h1 class="title">${data.title}</h1>
-        <span class="description">${data.short_description}</span>   
+        <div class="card-content">
+            <div>
+                <span class="release-date">${data.release_date}</span>
+                <div class="text-content">
+                    <h1 class="title">${data.title}</h1>
+                    <span class="description">${data.short_description}</span>
+                </div>
+            </div>
+            <div class="star" id="star ${data.id}"> </div>  
+        </div>
     </div>`;
 }
 

@@ -19,6 +19,10 @@ header {
     background: linear-gradient(270deg, #531877 -0.21%, #0F0416 100.14%);
 }
 
+.card-content {
+    display: flex;
+}
+
 .flex-header {
     display: flex;
     height: 9.25vh;
@@ -111,7 +115,7 @@ header button:hover {
 
 }
 
-.side-bar-itens {
+#side-bar-itens {
     display: flex;
     width: 100%;
     height: 41.77vw;
@@ -138,11 +142,11 @@ header button:hover {
     align-items: flex-end;
 }
 
-.side-bar-itens span {
+#side-bar-itens span {
     font-size: 1.3rem;
 }
 
-.side-bar-itens button {
+#side-bar-itens button {
     cursor: pointer;
     background: none;
     width: 85%;
@@ -151,23 +155,15 @@ header button:hover {
     align-items: center;
 }
 
-.side-bar-itens button:hover {
+#side-bar-itens button:hover {
     background: none;
     border-radius: 1vw;
 }
-
-.side-bar-itens img {
+#side-bar-itens img {
     width: 50%;
 }
 
-.itens-container {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: center;
-}
-
-#button-home:hover {
+#home:hover {
     box-shadow:
         0 0 0.1vw 0.12vw #FFFFFF,
         0 0 0.5vw 0.2vw #00D1FF,
@@ -177,8 +173,7 @@ header button:hover {
         inset 0 0 1vw 0.1vw #00D1FF,
         inset 0 0 4vw 0.2vw#0085FF;
 }
-
-#button-pixel:hover {
+#pixel:hover {
     background: none;
     border-radius: 1vw;
     box-shadow:
@@ -191,7 +186,7 @@ header button:hover {
         inset 0 0 4vw 0.2vw#FFF500;
 }
 
-#button-space:hover {
+#space:hover {
     background: none;
     border-radius: 1vw;
     box-shadow:
@@ -204,7 +199,7 @@ header button:hover {
         inset 0 0 4vw 0.2vw#24FF00;
 }
 
-#button-flighting:hover {
+#flighting:hover {
     background: none;
     border-radius: 1vw;
     box-shadow:
@@ -217,7 +212,7 @@ header button:hover {
         inset 0 0 4vw 0.2vw#FF003D;
 }
 
-#button-mmorpg:hover {
+#mmorpg:hover {
     background: none;
     border-radius: 1vw;
     box-shadow:
@@ -230,7 +225,7 @@ header button:hover {
         inset 0 0 4vw 0.2vw#FF8A00;
 }
 
-#button-sci-fi:hover {
+#sci-fi:hover {
     background: none;
     border-radius: 1vw;
     box-shadow:
@@ -243,7 +238,7 @@ header button:hover {
         inset 0 0 4vw 0.2vw#8000FF;
 }
 
-#button-shooting:hover {
+#shooting:hover {
     background: none;
     border-radius: 1vw;
     box-shadow:
@@ -256,7 +251,7 @@ header button:hover {
         inset 0 0 4vw 0.2vw#FF0000;
 }
 
-#button-horror:hover {
+#horror:hover {
     background: none;
     border-radius: 1vw;
     box-shadow:
@@ -353,7 +348,7 @@ button {
     display: grid;
     grid-template-columns: auto auto auto;
     justify-content: space-evenly;
-    margin-left: 1vh;
+    gap:5vh 0px;
 }
 
 .mini-banner {
@@ -362,28 +357,30 @@ button {
     flex-direction: column;
     background: #321245;
     border-radius: 1vw;
-    margin-bottom: 1.5vw;
 }
 
 .release-date {
+    display: block;
     font-weight: 400;
     font-size: 0.7rem;
     margin-left: 0.75vw;
 }
 
+.card-content .text-content{
+    margin-left: 1.5vw;
+    max-width: 15vw;
+}
+
 .title {
     margin-bottom: 0;
-    margin-top: -4.2vh;
-    margin-left: 1vw;
 }
 
 .description {
     width: 18vw;
+    text-overflow:ellipsis;
     height: 10%;
     font-weight: 400;
     font-size: 0.75rem;
-    margin-left: 1vw;
-    padding-bottom: 2vh;
 }
 
 .card {
@@ -400,11 +397,9 @@ button {
 .star {
     width: 5vw;
     height: 10vh;
-    position: relative;
     background-image: url("../img/star.png");
     background-size: cover;
     background-repeat: no-repeat;
-    left: 33.5vh;
 }
 
 .star:hover {
