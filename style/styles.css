@@ -1,29 +1,416 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+*{
+    font-family: 'Play';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 150%;
+    color: #FFF;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    height: 10.25vh;
+    background: linear-gradient(270deg, #531877 -0.21%, #0F0416 100.14%);
+}
+
+.flex-header {
+    display: flex;
+    height: 9.25vh;
+}
+
+.controller {
+    position: relative;
+    top: 6%;
+}
+
+.header-title .games {
+    margin-left: 41%;
+}
+
+.header-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: -2.4%;
+}
+
+.header-title span {
+
+    line-height: 80%;
+    display: flex;
+    align-items: center;
+
+    flex-direction: column;
+    justify-content: center;
+    margin-left: -2%;
+}
+
+.header-options {
+    width: 40.51vw;
+    display: flex;
+    justify-content: center;
+    padding-left: 30%;
+    align-items: center;
+}
+
+.header-options span {
+    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+}
+
+
+
+header button {
+    cursor: pointer;
+    background: none;
+    width: 35%;
+    height: 2.5vw;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    margin: 0px
+    font-size: 0.75rem;
+    margin-left: 3vw;
+    border-radius: 0.5vw;
 }
 
-#banner{
-    width: 73%;
-    height: 400px;
-    text-decoration: none;
-    background: #C4C4C4;
-    background-attachment: fixed;
-    background-repeat:no-repeat;
-    background-size: 100%;
+header button:hover {
+    background: #15081D;
 }
-#games{
+
+.header-neon {
+    position: relative;
+    z-index: 2;
+    border: none;
+    box-shadow:
+        0 0 0.1vw 0.11vw #fff7f7,
+        0 0 0.4vw 0.3vw #fb37ff,
+        0 0 4vw 0.4vw #320036b3,
+        0 0 4vw 0.4vw #8a1059cc,
+
+        inset 0 0 1.5vw 0.4vw #FB37FF,
+        inset 0 0 1.5vw 0.4vw #320036b3,
+        inset 0 0 0.4vw 0.2vw #8a1059cc,
+        inset 0 0 0.5vw 0.2vw #fff7f7;
+    width: 100%;
+    bottom: 0.05vw;
+}
+
+.side-bar {
+    display: flex;
+    width: 25.4%;
+    background-image: url("/Grand-Games/img/background.png");
+    background-size: 100% auto;
+    background-color: #15081D;
+
+}
+
+.side-bar-itens {
+    display: flex;
+    width: 100%;
+    height: 41.77vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 1.5vw;
+}
+
+.border-line {
+    width: 0;
+    position: relative;
+    z-index: 1;
+    box-shadow:
+        0 0 0.1vw 0.11vw #fff7f7,
+        0 0.3vw 0.4vw 0.3vw #fb37ff,
+        0 0 4vw 0.4vw #320036b3,
+        0 0 4vw 0.4vw #8a1059cc,
+
+        inset 0 0 1.5vw 0.4vw #FB37FF,
+        inset 0 0 1.5vw 0.4vw #320036b3,
+        inset 0 0 0.4vw 0.2vw #8a1059cc,
+        inset 0 0 0.5vw 0.2vw #fff7f7;
+    align-items: flex-end;
+}
+
+.side-bar-itens span {
+    font-size: 1.3rem;
+}
+
+.side-bar-itens button {
+    cursor: pointer;
+    background: none;
+    width: 85%;
+    height: 4.1vw;
+    display: flex;
+    align-items: center;
+}
+
+.side-bar-itens button:hover {
+    background: none;
+    border-radius: 1vw;
+}
+
+.side-bar-itens img {
+    width: 50%;
+}
+
+.itens-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+#button-home:hover {
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #00D1FF,
+        0 0 0.7vw 0.2vw#0085FF,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #00D1FF,
+        inset 0 0 4vw 0.2vw#0085FF;
+}
+
+#button-pixel:hover {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #FFE600,
+        0 0 0.7vw 0.2vw#FFE600,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #FFE600,
+        inset 0 0 4vw 0.2vw#FFF500;
+}
+
+#button-space:hover {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #05FF00,
+        0 0 0.7vw 0.2vw#24FF00,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #05FF00,
+        inset 0 0 4vw 0.2vw#24FF00;
+}
+
+#button-flighting:hover {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #FF00A8,
+        0 0 0.7vw 0.2vw#FF003D,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #FF00A8,
+        inset 0 0 4vw 0.2vw#FF003D;
+}
+
+#button-mmorpg:hover {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #FFB800,
+        0 0 0.7vw 0.2vw#FF8A00,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #FFB800,
+        inset 0 0 4vw 0.2vw#FF8A00;
+}
+
+#button-sci-fi:hover {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #AD00FF,
+        0 0 0.7vw 0.2vw#8000FF,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #AD00FF,
+        inset 0 0 4vw 0.2vw#8000FF;
+}
+
+#button-shooting:hover {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #FF0F00,
+        0 0 0.7vw 0.2vw#FF0000,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #FF0F00,
+        inset 0 0 4vw 0.2vw#FF0000;
+}
+
+#button-horror:hover {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #595959,
+        0 0 0.7vw 0.2vw#7B7B7B,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #595959,
+        inset 0 0 4vw 0.2vw#7B7B7B;
+}
+
+button {
+    border: hidden;
+
+}
+
+
+.banner-section {
+    width: 100%;
+    background-color: #15081D;
+
+}
+
+#banner {
+    height: 68.8vh;
+    background: #C4C4C4;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    box-shadow:
+        inset 0 0 7vw 1.5vw #d9d9d936,
+        inset 0 0 20vw 2vw #000000;
+}
+
+#banner .game-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 48.8vh;
+    padding-left: 1.4vw;
+}
+
+#banner .game-title {
+    font-size: 2.5rem;
+    line-height: 110%;
+    text-align: right;
+
+}
+
+#banner .game-desciption {
+    font-weight: 400;
+    font-size: 1.5rem;
+    padding-left: 1vw;
+}
+
+#banner .developer {
+    font-size: 1.5rem;
+
+
+    padding-left: 64vw;
+}
+
+.game-line {
+    padding-top: 5vh;
+    padding-left: 1vw;
+    padding-bottom: 1vh;
+}
+
+.game-line span {
+    font-size: 1.75rem;
+    color: #FF68F0;
+    padding-left: 2.3vw;
+}
+
+.game-line hr {
+    width: 72vw;
+    margin-top: 0;
+    margin-left: 2.5vw;
+    border: none;
+    box-shadow:
+        0 0 0.1vw 0.11vw #fff7f7,
+        0 0 0.4vw 0.3vw #fb37ff,
+        0 0 4vw 0.4vw #320036b3,
+        0 0 4vw 0.4vw #8a1059cc,
+
+        inset 0 0 1.5vw 0.4vw #FB37FF,
+        inset 0 0 1.5vw 0.4vw #320036b3,
+        inset 0 0 0.4vw 0.2vw #8a1059cc,
+        inset 0 0 0.5vw 0.2vw #fff7f7;
+
+}
+
+#games {
     display: grid;
     grid-template-columns: auto auto auto;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    margin-left: 1vh;
 }
 
-.card{
+.mini-banner {
+    display: flex;
+    width: 21vw;
+    flex-direction: column;
+    background: #321245;
+    border-radius: 1vw;
+    margin-bottom: 1.5vw;
+}
+
+.release-date {
+    font-weight: 400;
+    font-size: 0.7rem;
+    margin-left: 0.75vw;
+}
+
+.title {
+    margin-bottom: 0;
+    margin-top: -4.2vh;
+    margin-left: 1vw;
+}
+
+.description {
+    width: 18vw;
+    height: 10%;
+    font-weight: 400;
+    font-size: 0.75rem;
+    margin-left: 1vw;
+    padding-bottom: 2vh;
+}
+
+.card {
     text-decoration: none;
-    width: 292px;
-    height: 197px;
-    border-radius: 30px;
+    width: 21vw;
+    height: 28vh;
+    border-radius: 1vw;
+}
+
+.home-page {
+    display: flex;
+}
+
+.star {
+    width: 5vw;
+    height: 10vh;
+    position: relative;
+    background-image: url("../img/star.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    left: 33.5vh;
+}
+
+.star:hover {
+    background-image: url("../img/star-hover.png")
+}
+
+.shining-star {
+    background-image: url("../img/star-hover.png")
 }

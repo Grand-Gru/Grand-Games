@@ -2,10 +2,52 @@
 
 import { createElements } from "./gameCards.js";
 
+<<<<<<< HEAD
+=======
+const options = { // Declaração das cahves para RapidAPI
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com',
+		'X-RapidAPI-Key': '03c090ac21msh4e7ac00b13dc67cp13104fjsn56d1012cf8b6'
+	}
+};
+
+const createCard = data => { // cria o card e coloca a thumbmail
+    document.getElementById("games").innerHTML += `
+    <div class = "mini-banner">
+        <a href="${data.game_url}"> <img src="${data.thumbnail}"  class="card"> </a>
+
+        <span class="release-date">${data.release_date}</span>   
+        <div class="star" id="star ${data.id}"> </div>
+        <h1 class="title">${data.title}</h1>
+        <span class="description">${data.short_description}</span>   
+    </div>
+    `;
+}
+
+
+const requestGames = async (params = "") => { // faz o request dos dados
+    const response = await fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games${params}`, options);
+    return await response.json();
+}
+
+const createParams = (tag, platform, sort) => // cria os parametros para busca
+    `?platform=${platform}&sort-by=${sort}${tag ? `&category=${tag}`: ``}` 
+>>>>>>> 6d0fe518d9afd21a1d2354e8f1883366a90412e1
 
 createElements();
 
+<<<<<<< HEAD
 window.onscroll = function(e) {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) 
         createElements();
+=======
+let ok = true
+window.onscroll = async function(e) {
+    if ((window.innerHeight + window.scrollY + 100) >= document.body.offsetHeight && ok) {
+        ok = false
+        await createCards(pages);
+        ok = true
+    }
+>>>>>>> 6d0fe518d9afd21a1d2354e8f1883366a90412e1
 };
