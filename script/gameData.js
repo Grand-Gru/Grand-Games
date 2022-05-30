@@ -20,7 +20,7 @@ const createRequest = async url => {// Faz o request e formata para json
 
 const formatGameInfos = async (gamesInfos = []) => // formata os dados vindo da API
     gamesInfos.map(gameInfos => {
-        return { 
+        return {
             id: gameInfos.id,
             title: gameInfos.title,
             thumbnail: gameInfos.thumbnail,
@@ -31,23 +31,23 @@ const formatGameInfos = async (gamesInfos = []) => // formata os dados vindo da 
             publisher: gameInfos.publisher,
             developer: gameInfos.developer,
             game_url: gameInfos.game_url,
-            order:{
-                alphabetical: undefined, 
+            order: {
+                alphabetical: undefined,
                 release_date: undefined
             }
         }
     });
 const gamesRequest = (async () => { //salva os dados dos jogos formatados 
-        const response = await createRequest(`games?platform=all&sort-by=popularity`);
-        return await formatGameInfos(response);
-    })();    
+    const response = await createRequest(`games?platform=all&sort-by=popularity`);
+    return await formatGameInfos(response);
+})();
 export const GAMES_DATA = await gamesRequest;
 export const saveGamesInfoSort = async sortMethod => { //salva a ordem do metodo escolhido
-    const response = await createRequest(`games?platform=all&sort-by=${sortMethod.replace("_","-")}`);
+    const response = await createRequest(`games?platform=all&sort-by=${sortMethod.replace("_", "-")}`);
 
     for (let i = 0; i < response.length; i++)
         GAMES_DATA.filter(
-            gameInfo =>  gameInfo.id === response[i].id
-        )[0].order[sortMethod] = i+1;
+            gameInfo => gameInfo.id === response[i].id
+        )[0].order[sortMethod] = i + 1;
 }
 
