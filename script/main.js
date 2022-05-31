@@ -24,7 +24,9 @@ function buttonVerification(id) {
         if(button.id === id){ 
             createElements(false,false,id)
             button.className = 'pressed';  
-        }else{
+            console.log(button.id)
+        }
+        else{
              button.className = '';
         }
     }
