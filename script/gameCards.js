@@ -39,6 +39,7 @@ const filterGamesInfo = async (tag, sortMethod, platform) => { // filtra as info
 
 async function* infoController(tag, sortMethod, platform) {
     let gamesInfo = await filterGamesInfo(tag, sortMethod, platform);
+    document.getElementById("games").innerHTML = "";
     createBanner(gamesInfo[0]);
     for (let i = 1; i < gamesInfo.length; i++) {
         createCard(gamesInfo[i]);
@@ -52,4 +53,3 @@ export const createElements = async (tag, sortMethod, platform) => {
         generateElements = infoController(tag, sortMethod, platform);
     await generateElements.next();
 }   
-
