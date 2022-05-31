@@ -6,8 +6,7 @@ import { createElements } from "./gameCards.js";
 createElements();
 
 window.onscroll = function (e) {
-    if ((window.innerHeight + window.scrollY + 100) >= document.body.offsetHeight)
-        createElements();
+    
 };
 const button_header = document.getElementById("button_header");
 
@@ -21,10 +20,14 @@ for(const button of button_header.children){
 
 function buttonVerification(id) {
     for(const button of button_header.children){
-        console.log(button)
-        if(button.id === id)
+        if(button.id === id){ 
+            createElements(false,false,id)
             button.className = 'pressed';
-        else button.className = '';
+      
+        
+        }else{
+             button.className = '';
+        }
     }
 }
 

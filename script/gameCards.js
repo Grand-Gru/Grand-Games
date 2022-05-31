@@ -52,3 +52,4 @@ export const createElements = async (tag, sortMethod, platform) => {
         generateElements = infoController(tag, sortMethod, platform);
     await generateElements.next();
 }   
+
