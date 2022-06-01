@@ -2,6 +2,7 @@
 
 import { GAMES_DATA, filterGameInfoByTag } from "./gameData.js";
 
+
 const createCard = data => { // cria o card e coloca a thumbmail
     document.getElementById("games").innerHTML += `
     <div class = "mini-banner">
@@ -14,10 +15,12 @@ const createCard = data => { // cria o card e coloca a thumbmail
                     <span class="description">${data.short_description}</span>
                 </div>
             </div>
-            <div class="star" id="star ${data.id}"> </div>  
+            <button class="star" id="${data.id}" onclick="saveFav(${data.id})"></button> 
         </div>
     </div>`;
+
 }
+
 
 const createBanner = data => {// altera o banner
     const releaseDate = new Date(data.release_date);

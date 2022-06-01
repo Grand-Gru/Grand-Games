@@ -88,10 +88,6 @@ header button:hover {
     background: #15081D;
 }
 
-.pressed{
-    background: #15081D;
-} 
-
 .header-neon {
     position: relative;
     z-index: 2;
@@ -112,6 +108,7 @@ header button:hover {
 
 .side-bar {
     display: flex;
+    width: 25.4%;
     background-image: url("/Grand-Games/img/background.png");
     background-size: 100% auto;
     background-color: #15081D;
@@ -121,7 +118,7 @@ header button:hover {
 #side-bar-itens {
     display: flex;
     width: 100%;
-    height: 85vh;
+    height: 41.77vw;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
@@ -146,7 +143,7 @@ header button:hover {
 }
 
 #side-bar-itens span {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 #side-bar-itens button {
@@ -202,7 +199,7 @@ header button:hover {
         inset 0 0 4vw 0.2vw#24FF00;
 }
 
-#flight:hover {
+#flighting:hover {
     background: none;
     border-radius: 1vw;
     box-shadow:
@@ -241,12 +238,7 @@ header button:hover {
         inset 0 0 4vw 0.2vw#8000FF;
 }
 
-.featuredvideo {
-    height: 50vh;
-    width: 35vw;
-}
-
-#shooter:hover {
+#shooting:hover {
     background: none;
     border-radius: 1vw;
     box-shadow:
@@ -279,59 +271,47 @@ button {
 
 
 .banner-section {
-    background-color: #15081D;
-
-}
-
-.card-section{
     width: 100%;
     background-color: #15081D;
+
 }
 
 #banner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background: linear-gradient(270deg, #0F0416 -0.21%, #3e1259 100.14%);
-}
-
-.before-line {
-    display: flex;
-    justify-content: space-between;
+    height: 68.8vh;
+    background: #C4C4C4;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    box-shadow:
+        inset 0 0 7vw 1.5vw #d9d9d936,
+        inset 0 0 20vw 2vw #000000;
 }
 
 #banner .game-info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
+    padding-top: 48.8vh;
+    padding-left: 1.4vw;
 }
 
 #banner .game-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     line-height: 110%;
     text-align: right;
-    padding-left: 0.5vw;
 
 }
-#banner .footer{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 2vw;
-    width: 35vw;
-}
+
 #banner .game-desciption {
     font-weight: 400;
-    font-size: 1.3rem;
-    padding-left: 1.5vw;
-    width: 35vw;
+    font-size: 1.5rem;
+    padding-left: 1vw;
 }
 
 #banner .developer {
-    font-size: 1rem;
-    align-self: flex-end;
+    font-size: 1.5rem;
+
+
+    padding-left: 64vw;
 }
 
 .game-line {
@@ -420,7 +400,6 @@ button {
     background-image: url("../img/star.png");
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: unset;
 }
 
 .star:hover {
@@ -429,70 +408,4 @@ button {
 
 .shining-star {
     background-image: url("../img/star-hover.png")
-}
-
-.select {
-    color: #d189ca;
-}    
-.select select {
-        cursor: pointer;
-        outline: 0;
-        border: 0;
-        padding: 4px;
-        border-radius: 0px;
-        background: transparent;
-        appearance: none;
-    }
-.select select:focus {
-    background: #15081D;
-
-}
-@media (max-width: 800px) {
-    .side-bar{
-        display: none;
-    }
-    #banner{
-        width: 100vw;
-        flex-direction: column;
-    }
-    .featuredvideo{
-        height: auto;
-        width: 100vw;
-    }
-    .game-title{
-        font-size:1.5rem;
-    }
-    #banner .game-desciption{
-        width: 95vw;
-        font-size:1rem;
-    }
-    #banner .footer {
-        width: 90vw;
-    }
-    #games{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .mini-banner {
-        width: 93vw;
-        flex-direction: row;
-    }
-    .card-content .text-content{
-        margin-left: 0.8vw;
-        max-width: 60vw;
-    }
-    .release-date {
-        display: none;
-    }
-    .card {
-        align-self: center;
-        width: 40vw;
-        height: auto;
-    }
-    .mini-banner a{
-        display: flex;
-        align-items: center;
-        justify-content:center;
-    }
 }
