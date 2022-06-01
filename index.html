@@ -12,7 +12,7 @@
 
 <body>
     <header>
-        <div  class="flex-header">
+        <div class="flex-header">
             <img class="controller" src="./img/figma.png" alt="Controle neon">
             <div class="header-title">
                 <span>Grand</span>
@@ -22,7 +22,7 @@
                 <button type="button" id="pc">PC</button>
                 <button type="button" id="browser">Browser</button>
 
-                <button type="button" id="all">All</button>
+                <button type="button" class="pressed" id="all">All</button>
                 <button type="button" id="favoritos">Favoritos</button>
             </div>
         </div>
@@ -33,7 +33,7 @@
         <div class="side-bar">
             <div id="side-bar-itens">
 
-                <button id="home" class="selected" type="button">
+                <button id="home" class="pressed" type="button">
                     <img src="./img/TESTE.png" alt="">
                     <span>Home</span>
                 </button>
@@ -48,7 +48,7 @@
                     <span>Space</span>
                 </button>
 
-                <button id="flighting" type="button">
+                <button id="flight" type="button">
                     <img src="./img/flighting.png" alt="">
                     <span>Flighting</span>
                 </button>
@@ -63,7 +63,7 @@
                     <span>Sci-fi</span>
                 </button>
 
-                <button id="shooting" type="button">
+                <button id="shooter" type="button">
                     <img src="./img/shooting.png" alt="">
                     <span>Shooting</span>
                 </button>
@@ -75,23 +75,32 @@
             <div class="border-line">
             </div>
         </div>
-        <div class="banner-section">
-            <div id="banner">
-                <div class="game-info">
-                    <span class="game-title">Game title</span>
-                    <span class="game-desciption">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Aliquam vel pulvinar enim, a accumsan nunc. Aliquam semper
-                        lobortis sapien, ac dapibus eros dictum et.
-                        Proin porta id nisl at facilisis.</span>
-                    <span class="developer">Developer 2020</span>
+        <div>
+            <div class="banner-section">
+                <div id="banner">
+
                 </div>
             </div>
-            <div class="game-line">
-                <span>Games</span>
-                <hr>
-            </div>
-            <div id="games">
-            </div>
+
+            <section class="card-section">
+                <div class="game-line">
+                    <div class="before-line">
+                        <span>Games</span>
+                        <div class="select">
+                            Sort By:
+                            <select id="order">
+                                <option value="poularity">Popularity</option>
+                                <option value="release_date">Release Date</option>
+                                <option value="alphabetical">Alphabetical</option>
+                            </select>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+
+                <div id="games">
+                </div>
+            </section>
         </div>
     </section>
 

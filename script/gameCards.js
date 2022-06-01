@@ -1,6 +1,6 @@
 "use strict";
 
-import { GAMES_DATA, saveGamesInfoSort } from "./gameData.js";
+import { GAMES_DATA, filterGameInfoByTag } from "./gameData.js";
 
 const createCard = data => { // cria o card e coloca a thumbmail
     document.getElementById("games").innerHTML += `
@@ -20,25 +20,43 @@ const createCard = data => { // cria o card e coloca a thumbmail
 }
 
 const createBanner = data => {// altera o banner
-    document.getElementById("banner").style.backgroundImage = 'url(' + data.thumbnail.replace("thumbnail.jpg", "background.webp") + ')';
-    document.getElementById("banner").href = data.game_url;
+    const releaseDate = new Date(data.release_date);
+    document.getElementById("banner").innerHTML= `
+        <video class="featuredvideo" loop autoplay muted="" poster="${data.thumbnail}">
+            <source src="https://www.freetogame.com/g/${data.id}/videoplayback.webm" type="video/webm">
+        </video>
+        <div class="game-info">
+        <span class="game-title">${data.title}</span>
+        <p class="game-desciption">${data.short_description}</p>
+        <div class="footer">
+            <a href="${data.game_url}">Acessar Jogo</a>
+            <span class="developer">${data.developer} ${releaseDate.getFullYear()}</span>
+        </div>
+    </div>
+    `
 }
 
 
 const filterGamesInfo = async (tag, sortMethod, platform) => { // filtra as informações do jogo
     let gamesInfo = GAMES_DATA;
-    if (sortMethod) {
-        if (!gamesInfo[0].order[sortMethod])
-            await saveGamesInfoSort(sortMethod);
-        gamesInfo = GAMES_DATA.sort((a, b) => a.order[sortMethod] - b.order[sortMethod]);
+
+    if(tag !== "home")
+        gamesInfo = await filterGameInfoByTag(tag);
+
+    if(sortMethod === "alphabetical")
+        gamesInfo = gamesInfo.sort((a, b) => a.title.localeCompare(b.title));
+    
+    if (sortMethod === "release_date"){
+        gamesInfo = gamesInfo.sort((a, b) => new Date(a.release_date).getTime() - new Date(b.release_date).getTime());
     }
-    if ((tag || platform) && tag !== "home")
-        gamesInfo = gamesInfo.filter(gameInfo => (gameInfo.tag === tag || !tag) && (gameInfo.platform === platform || !platform));
+
+    if (platform !== "all")
+        gamesInfo = gamesInfo.filter(gameInfo => gameInfo.platform === platform || gameInfo.platform === "all");
+
     return gamesInfo;
 }
 
-async function* infoController(tag, sortMethod, platform) {
-    let gamesInfo = await filterGamesInfo(tag, sortMethod, platform);
+function* infoController(gamesInfo) {
     document.getElementById("games").innerHTML = "";
     createBanner(gamesInfo[0]);
     for (let i = 1; i < gamesInfo.length; i++) {
@@ -46,10 +64,12 @@ async function* infoController(tag, sortMethod, platform) {
         if (i % 9 === 0) yield;
     }
 }
-var generateElements = infoController();
+var generateElements;
 
 export const createElements = async (tag, sortMethod, platform) => {
-    if (tag || sortMethod || platform)
-        generateElements = infoController(tag, sortMethod, platform);
+    if (tag || sortMethod || platform){
+        const gamesInfo = await filterGamesInfo(tag, sortMethod, platform);
+        generateElements = infoController(gamesInfo);
+    }
     await generateElements.next();
 }   
