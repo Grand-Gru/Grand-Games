@@ -479,7 +479,12 @@ button {
 .game-line-disabled{
     display:none ;
 }
-
+.error-message{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    margin-left: 14vw;
+}
 
 @media (max-width: 800px) {
     .side-bar{
