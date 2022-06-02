@@ -41,21 +41,23 @@ const createBanner = data => {// altera o banner
 }
 
 
-const filterGamesInfo = async (tag, sortMethod, platform) => { // filtra as informações do jogo
+const filterGamesInfo = async (tag, sortMethod, platform, fav = false) => { // filtra as informações do jogo
     let gamesInfo = GAMES_DATA;
 
-    if(tag !== "home")
+    if(tag !== "home" && tag)
         gamesInfo = await filterGameInfoByTag(tag);
 
     if(sortMethod === "alphabetical")
         gamesInfo = gamesInfo.sort((a, b) => a.title.localeCompare(b.title));
     
-    if (sortMethod === "release_date"){
+    if (sortMethod === "release_date")
         gamesInfo = gamesInfo.sort((a, b) => new Date(a.release_date).getTime() - new Date(b.release_date).getTime());
-    }
-
-    if (platform !== "all")
+    
+    if (platform !== "all" && platform)
         gamesInfo = gamesInfo.filter(gameInfo => gameInfo.platform === platform || gameInfo.platform === "all");
+
+    if(fav)
+        gamesInfo = gamesInfo.filter(gameInfo => JSON.parse(localStorage.favorites).includes(gameInfo.id));
 
     return gamesInfo;
 }
@@ -63,7 +65,6 @@ const filterGamesInfo = async (tag, sortMethod, platform) => { // filtra as info
 function* infoController(gamesInfo) {
     document.getElementById("games").innerHTML = "";
     const favorites = JSON.parse(localStorage.favorites);
-    createBanner(gamesInfo[0]);
     for (let i = 1; i < gamesInfo.length; i++) {
         createCard(gamesInfo[i]);
         if(favorites.includes(gamesInfo[i].id))
@@ -76,7 +77,15 @@ var generateElements;
 export const createElements = async (tag, sortMethod, platform) => {
     if (tag || sortMethod || platform){
         const gamesInfo = await filterGamesInfo(tag, sortMethod, platform);
+        createBanner(gamesInfo[0]);
         generateElements = infoController(gamesInfo);
     }
-    await generateElements.next();
+    generateElements.next();
+}   
+
+export const createElementsFavorite = async () => {
+    const gamesInfo = await filterGamesInfo(false, false, false, true);
+    gamesInfo.unshift(0);
+    generateElements = infoController(gamesInfo);
+    generateElements.next();
 }   

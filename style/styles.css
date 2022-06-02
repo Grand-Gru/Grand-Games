@@ -29,6 +29,10 @@ h2{
     display: flex;
     height: 9.25vh;
 }
+.flex-logo {
+    display: flex;
+    height: 9.25vh;
+}
 
 .controller {
     position: relative;
@@ -117,7 +121,10 @@ header button:hover {
     background-image: url("/img/background.png");
     background-size: 100% auto;
     background-color: #15081D;
-
+}
+.main-frame{
+    min-height: 100vh;
+    background-color: #15081D;
 }
 
 #side-bar-itens {
@@ -260,7 +267,6 @@ header button:hover {
         inset 0 0 1vw 0.1vw #FF0F00,
         inset 0 0 4vw 0.2vw#FF0000;
 }
-
 #horror:hover {
     background: none;
     border-radius: 1vw;
@@ -369,7 +375,7 @@ button {
 
 #games {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 21vw 21vw 21vw;
     justify-content: space-evenly;
     gap:5vh 0px;
 }
@@ -487,6 +493,12 @@ button {
 }
 
 @media (max-width: 800px) {
+    .card-section {
+        width: 100vw;
+    }
+    .game-line hr {
+        width: 93vw;
+    }
     .side-bar{
         display: none;
     }
@@ -533,5 +545,17 @@ button {
         display: flex;
         align-items: center;
         justify-content:center;
+    }
+
+    .header-options {
+        padding-left: 0px;
+    }
+    .flex-header {
+        flex-direction: column;
+        align-items: center;
+        height:auto;
+    }
+    header{
+        height: auto
     }
 }
