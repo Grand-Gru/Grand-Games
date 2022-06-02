@@ -18,6 +18,7 @@ window.onscroll = function (e) {
 selectSort.addEventListener('change', e => changeGames());
 
 
+
 for(const button of button_header.children){ // cria eventos para quando um botão do header é apertado
     
     button.addEventListener('click', e => {
@@ -48,7 +49,7 @@ for(const button of button_header.children){ // cria eventos para quando um bot�
                         <span class="description">${data.short_description}</span>
                     </div>
                 </div>
-                <div class="star" id="star ${data.id}"> </div>  
+                <div class="star" id="${data.id}"> </div>  
             </div>
         </div>`;
         }else{ 
