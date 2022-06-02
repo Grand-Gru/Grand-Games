@@ -112,7 +112,7 @@ header button:hover {
 
 .side-bar {
     display: flex;
-    background-image: url("/Grand-Games/img/background.png");
+    background-image: url("/img/background.png");
     background-size: 100% auto;
     background-color: #15081D;
 

@@ -18,7 +18,6 @@ const createCard = data => { // cria o card e coloca a thumbmail
             <button class="star" id="${data.id}" onclick="saveFav(${data.id})"></button> 
         </div>
     </div>`;
-
 }
 
 
@@ -61,9 +60,12 @@ const filterGamesInfo = async (tag, sortMethod, platform) => { // filtra as info
 
 function* infoController(gamesInfo) {
     document.getElementById("games").innerHTML = "";
+    const favorites = JSON.parse(localStorage.favorites);
     createBanner(gamesInfo[0]);
     for (let i = 1; i < gamesInfo.length; i++) {
         createCard(gamesInfo[i]);
+        if(favorites.includes(gamesInfo[i].id))
+            document.getElementById(gamesInfo[i].id).classList.add("shining-star");
         if (i % 9 === 0) yield;
     }
 }

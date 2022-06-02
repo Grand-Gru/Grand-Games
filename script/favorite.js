@@ -1,14 +1,13 @@
-const favorites = [];
+localStorage.favorites = '[]';
 
 function saveFav(id){
-    document.getElementById(id).classList.add("shining-star");
-    favorites.push(id);
-    console.log(favorites);
-    console.log(!!favorites.find(elementId => elementId === id))
-    // for(const verification of favorites){
-    //     if(verification.id = id){
-    //         document.getElementById(id).classList.add("shining-star");
-
-    //     }
-
+    const favorites = JSON.parse(localStorage.favorites);
+    if(favorites.includes(id)){
+        document.getElementById(id).classList.remove("shining-star");
+        localStorage.favorites = JSON.stringify(favorites.filter(idFav => idFav !== id));
+    }else{
+        document.getElementById(id).classList.add("shining-star");
+        favorites.push(id);
+        localStorage.favorites = JSON.stringify(favorites);
+    }
 }
