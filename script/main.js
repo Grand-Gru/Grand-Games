@@ -12,9 +12,11 @@ const selectSort = document.getElementById("order");
 window.onscroll = function (e) {
     if ((window.innerHeight + window.scrollY + 100) >= document.body.offsetHeight)
         createElements();
+        
 };
 
 selectSort.addEventListener('change', e => changeGames());
+
 
 for(const button of button_header.children){ // cria eventos para quando um botão do header é apertado
     
