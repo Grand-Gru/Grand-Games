@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-
-
-function saveFav(id){
-    
-    document.getElementById(id).classList.toggle("shining-star");
-    
-}
-=======
 localStorage.favorites = '[]';
 
 function saveFav(id){
@@ -20,4 +11,3 @@ function saveFav(id){
         localStorage.favorites = JSON.stringify(favorites);
     }
 }
->>>>>>> 791854cc6fd6d2174c06025510a81ea6efbf5834
