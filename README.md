@@ -7,7 +7,7 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
 
-<img src="https://user-images.githubusercontent.com/103078329/171071895-b9f18ef8-2659-42c2-80da-41261c50c804.png" alt="home">
+ ![WhatsApp Image 2022-06-01 at 19 39 22](https://user-images.githubusercontent.com/103078329/171521601-cee88e85-825b-4d03-888b-aff3a880fcba.jpeg) 
 
 
 > Grand Games é um site de catálagos de jogos contemplando gêneros como pixel, space, flighting, mmorpg, sci-fi, shooting, terror. 
