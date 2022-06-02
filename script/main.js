@@ -38,20 +38,20 @@ for(const button of button_header.children){ // cria eventos para quando um bot√
                 <div class="favorite-line"></div>
             </div>
         `
-        document.getElementById("games").innerHTML += `   
+        document.getElementById("games").innerHTML = `   
         <div class = "mini-banner">
-            <a href="${data.game_url}"> <img src="${data.thumbnail}"  class="card"> </a>
-            <div class="card-content">
-                <div>
-                    <span class="release-date">${data.release_date}</span>
-                    <div class="text-content">
-                        <h1 class="title">${data.title}</h1>
-                        <span class="description">${data.short_description}</span>
-                    </div>
+        <a href="${data.game_url}"> <img src="${data.thumbnail}"  class="card"> </a>
+        <div class="card-content">
+            <div>
+                <span class="release-date">${data.release_date}</span>
+                <div class="text-content">
+                    <h1 class="title">${data.title}</h1>
+                    <span class="description">${data.short_description}</span>
                 </div>
-                <div class="star" id="${data.id}"> </div>  
             </div>
-        </div>`;
+            <button class="star" id="${data.id}" onclick="saveFav(${data.id})"></button> 
+        </div>
+    </div>`;
         }else{ 
             document.getElementById("game-line").classList.remove("game-line-disabled");
             buttonVerification(button.id);

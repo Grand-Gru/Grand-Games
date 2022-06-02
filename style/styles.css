@@ -18,7 +18,9 @@ header {
     height: 10.25vh;
     background: linear-gradient(270deg, #531877 -0.21%, #0F0416 100.14%);
 }
-
+h2{    
+    font-size: 2rem;
+}
 .card-content {
     display: flex;
 }
