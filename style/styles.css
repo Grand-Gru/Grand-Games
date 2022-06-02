@@ -280,6 +280,7 @@ button {
 
 .banner-section {
     background-color: #15081D;
+    width: 78vw;
 
 }
 
@@ -446,6 +447,37 @@ button {
     background: #15081D;
 
 }
+
+.favorites-flex{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: #15081D;
+    justify-content: center;
+}
+
+.favorite-line{
+
+    width: 30vw;
+    height: 0;
+    border: none;
+    box-shadow:
+        0 0 0.1vw 0.11vw #fff7f7,
+        0 0 0.4vw 0.3vw #fb37ff,
+        0 0 4vw 0.4vw #320036b3,
+        0 0 4vw 0.4vw #8a1059cc,
+
+        inset 0 0 1.5vw 0.4vw #FB37FF,
+        inset 0 0 1.5vw 0.4vw #320036b3,
+        inset 0 0 0.4vw 0.2vw #8a1059cc,
+        inset 0 0 0.5vw 0.2vw #fff7f7;
+
+}
+.game-line-disabled{
+    display:none ;
+}
+
+
 @media (max-width: 800px) {
     .side-bar{
         display: none;

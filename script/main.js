@@ -17,8 +17,42 @@ window.onscroll = function (e) {
 selectSort.addEventListener('change', e => changeGames());
 
 for(const button of button_header.children){ // cria eventos para quando um botão do header é apertado
+    
     button.addEventListener('click', e => {
-        buttonVerification(button.id);
+             
+        if(button.id === 'favoritos'){ 
+            document.getElementById("pc").classList.remove("pressed");   
+            document.getElementById("browser").classList.remove("pressed");     
+            document.getElementById("all").classList.remove("pressed");  
+            
+     
+            button.className = 'pressed';  
+            document.getElementById("game-line").classList.add("game-line-disabled");
+            document.getElementById("banner").innerHTML= `
+            <div class ="favorites-flex">
+                <div class="favorite-line"></div>
+                <img class="favorite-star" src="../img/star-hover.png">
+                <div class="favorite-line"></div>
+            </div>
+        `
+        document.getElementById("games").innerHTML += `   
+        <div class = "mini-banner">
+            <a href="${data.game_url}"> <img src="${data.thumbnail}"  class="card"> </a>
+            <div class="card-content">
+                <div>
+                    <span class="release-date">${data.release_date}</span>
+                    <div class="text-content">
+                        <h1 class="title">${data.title}</h1>
+                        <span class="description">${data.short_description}</span>
+                    </div>
+                </div>
+                <div class="star" id="star ${data.id}"> </div>  
+            </div>
+        </div>`;
+        }else{ 
+            document.getElementById("game-line").classList.remove("game-line-disabled");
+            buttonVerification(button.id);
+        }
     })
 }
 
@@ -49,6 +83,8 @@ function buttonVerification(id) {
         else{
              button.className = '';
         }
-    }
+    }    
     changeGames();
+
 }
+

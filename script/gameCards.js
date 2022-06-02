@@ -33,6 +33,8 @@ const createBanner = data => {// altera o banner
             <span class="developer">${data.developer} ${releaseDate.getFullYear()}</span>
         </div>
     </div>
+
+    
     `
 }
 
