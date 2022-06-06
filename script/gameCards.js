@@ -6,7 +6,7 @@ import { GAMES_DATA, filterGameInfoByTag } from "./gameData.js";
 const createCard = data => { // cria o card e coloca a thumbmail
     document.getElementById("games").innerHTML += `
     <div class = "mini-banner">
-        <a href="${data.game_url}"> <img src="${data.thumbnail}"  class="card"> </a>
+        <a href="${data.game_url}" target="_blank"> <img src="${data.thumbnail}"  class="card"> </a>
         <div class="card-content">
             <div>
                 <span class="release-date">${data.release_date}</span>
@@ -32,7 +32,7 @@ const createBanner = data => {// altera o banner
         <span class="game-title">${data.title}</span>
         <p class="game-desciption">${data.short_description}</p>
         <div class="footer">
-            <a href="${data.game_url}">Acessar Jogo</a>
+            <a href="${data.game_url}" target="_blank">Acessar Jogo</a>
             <span class="developer">${data.developer} ${releaseDate.getFullYear()}</span>
         </div>
     </div>
