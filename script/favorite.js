@@ -1,4 +1,6 @@
-localStorage.favorites = '[]';
+
+if(!localStorage.favorites)
+    localStorage.favorites = '[]';
 
 function saveFav(id){
     const favorites = JSON.parse(localStorage.favorites);

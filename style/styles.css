@@ -33,6 +33,7 @@ h2{
 .flex-logo {
     display: flex;
     height: 9.25vh;
+    cursor: pointer;
 }
 
 .controller {
