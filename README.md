@@ -1,12 +1,6 @@
 # Grand Games
 
 
-![GitHub repo size](https://img.shields.io/github/repo-size/iuricode/README-template?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/iuricode/README-template?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/iuricode/README-template?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
-
  ![WhatsApp Image 2022-06-01 at 19 39 22](https://user-images.githubusercontent.com/103078329/171521601-cee88e85-825b-4d03-888b-aff3a880fcba.jpeg) 
 
 
