@@ -108,7 +108,9 @@ header button:hover {
     transition: 0.5s;
 }
 
-
+.footer a{
+    font-size: 1.5rem;
+}
 
 .pressed{
     background: #15081D;
@@ -645,7 +647,7 @@ button {
     display: flex;
     align-items: center;
     height: 100vh;
-    margin-left: 14vw;
+
 }
 
 @media (max-width: 800px) {

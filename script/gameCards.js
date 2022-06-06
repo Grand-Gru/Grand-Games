@@ -22,6 +22,7 @@ const createCard = data => { // cria o card e coloca a thumbmail
 
 
 const createBanner = data => {// altera o banner
+    if(data){ 
     const releaseDate = new Date(data.release_date);
     document.getElementById("banner").innerHTML= `
         <video class="featuredvideo" loop autoplay muted="" poster="${data.thumbnail}">
@@ -35,9 +36,16 @@ const createBanner = data => {// altera o banner
             <span class="developer">${data.developer} ${releaseDate.getFullYear()}</span>
         </div>
     </div>
-
-    
     `
+
+    }else{
+        document.getElementById("game-line").classList.add("game-line-disabled");
+        document.getElementById("banner").innerHTML= `
+        <div class ="error-message">
+        <h2>There are no games in those sections.</h2>
+     </div>
+    `
+    }
 }
 
 
@@ -79,8 +87,10 @@ export const createElements = async (tag, sortMethod, platform) => {
         const gamesInfo = await filterGamesInfo(tag, sortMethod, platform);
         createBanner(gamesInfo[0]);
         generateElements = infoController(gamesInfo);
+        
     }
     generateElements.next();
+
 }   
 
 export const createElementsFavorite = async () => {
