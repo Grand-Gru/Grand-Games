@@ -885,7 +885,7 @@ button {
     position: relative;
     top: 12vh;
     left: 3vw;
-    background-image: url(/img/hambugyuer.png);
+    background-image: url(../img/hambugyuer.png);
     background-size: cover;
     }
     .header-itens{
