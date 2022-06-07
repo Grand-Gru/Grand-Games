@@ -868,14 +868,14 @@ button {
 
     }
     .options{
-        display: block;
-        width: 5vw;
-        height: 3vh;
-        position: relative;
-        top: 8vh;
-        left: 3vw;
-        background-image: url(/img/hambugyuer.png);
-        background-size: cover;
+    display: block;
+    width: 4vw;
+    height: 2vh;
+    position: relative;
+    top: 12vh;
+    left: 3vw;
+    background-image: url(/img/hambugyuer.png);
+    background-size: cover;
     }
     .header-itens{
         width: 100vw;
@@ -896,7 +896,7 @@ button {
     #side-bar-itens button:hover{
         padding: 2.4vh;
     }
-    .game-info{
+    #banner .game-info{
         align-items: center;
     }
 }
