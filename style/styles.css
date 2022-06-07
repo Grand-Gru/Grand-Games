@@ -34,6 +34,7 @@ h2{
     display: flex;
     height: 9.25vh;
     cursor: pointer;
+    width: 11vw;
 }
 
 .controller {
@@ -49,7 +50,7 @@ h2{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: -2.4%;
+    width: 1vw;
 }
 
 .header-title span {
@@ -92,7 +93,7 @@ header button {
     border-radius: 0.5vw;
 }
 
-header button:hover {
+button_header button:hover {
     background: #15081D;
 }
 
@@ -432,7 +433,13 @@ header button:hover {
         inset 0 0 4vw 0.2vw#7B7B7B;
 }
 
-
+.footer a{
+    text-decoration: none;
+    border-radius: 1vh;
+    padding: 1vw;
+    background: #632389;
+    width: 11vw;
+}
 
 .featuredvideo {
     height: 50vh;
@@ -462,6 +469,9 @@ button {
     align-items: center;
     justify-content: center;
     width: 100%;
+    background: #321245;
+    border-bottom-left-radius: 7vh;
+    border-bottom-right-radius: 7vh;
 
 }
 
@@ -607,6 +617,7 @@ button {
 }
 .select {
     color: #d189ca;
+    margin-right: 3vh;
 }    
 .select select {
         cursor: pointer;
@@ -739,9 +750,7 @@ button {
     .star {
         width: 8vw;
         height: 4vh;
-        position: relative;
-        top: -0.4vh;
-        left: 5vw;
+        margin-left: 22px;
     }
     .mini-banner img{
         border-bottom: 3px solid #542866;
@@ -749,9 +758,12 @@ button {
     .favorite-star{
         height: 15vh;
     }
-    .favorites-flex{
-        justify-content: flex-start;
-    }
+.side-bar-cell{
+    position: absolute;
+    background-image: url(/img/background.png);
+    border-top-right-radius: 7vh;
+    border-bottom-right-radius: 7vh;
+}
     #banner{
         width: 100vw;
         flex-direction: column;
@@ -792,7 +804,6 @@ button {
     }
     #banner .game-title{
         font-size:1.5rem;
-        padding-left: 21vw;
 }
     #banner .developer{
         margin: 3vh;
@@ -803,15 +814,10 @@ button {
         flex-direction: column;
         border-radius: 1vh;
         border: 1px solid #3d1d41;
-    }
-    .controller {
-        position: relative;
-        top: 1%;
-        left: 6%;
-    }    
+    } 
     .header-title{
         position: relative;
-        left: -9%;
+        left: -3%;
     }
     .card-content .text-content{
         margin-left: 0.8vw;
@@ -833,6 +839,7 @@ button {
         border-radius: 1vh;
         padding: 1vw;
         background: #632389;
+        width: 58vw;
     }
 
     .mini-banner a{
@@ -842,6 +849,7 @@ button {
     }
     .flex-logo{
         justify-content: center;
+        width: 90vw;
     }
     .header-options {
         padding-left: 0px;
@@ -854,12 +862,20 @@ button {
         align-items: center;
         height:auto;
     }
+    .star-flex button{
+        width: 11vw;
+        height: 5vh;
+
+    }
     .options{
-        display:initial;
-        width: 3vh;
+        display: block;
+        width: 5vw;
+        height: 3vh;
         position: relative;
-        top: 9vh;
+        top: 8vh;
         left: 3vw;
+        background-image: url(/img/hambugyuer.png);
+        background-size: cover;
     }
     .header-itens{
         width: 100vw;
@@ -873,5 +889,14 @@ button {
         margin-top: 2vh;
         align-self: flex-end;
 
+    }
+    .pressed{
+        padding: 2.4vh;
+    }
+    #side-bar-itens button:hover{
+        padding: 2.4vh;
+    }
+    .game-info{
+        align-items: center;
     }
 }

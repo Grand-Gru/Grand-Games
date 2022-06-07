@@ -19,7 +19,7 @@ const createBanner = data => {// altera o banner
           
       
             <div class="footer">
-            <a href="${data.game_url}" target="_blank">Acessar Jogo</a>
+            <a href="${data.game_url}" target="_blank">Acess Game</a>
             <span class="developer">${data.developer} ${releaseDate.getFullYear()}</span>
         </div>
     </div>
