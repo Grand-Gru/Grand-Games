@@ -12,7 +12,24 @@ body {
     margin: 0;
     padding: 0;
 }
-
+.rollback{
+    position: fixed;
+    bottom: 5vh;
+    right: 0.5vw;
+    height: 2vh;
+    width: 1vw;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.4vh solid;
+    padding: 1vw;
+    z-index: 900;
+    opacity: 25%;
+}
+.rollback-initial{
+    display:none;
+}
 header {
     width: 100%;
     height: 10.25vh;
@@ -136,8 +153,7 @@ button_header button:hover {
     width: 100%;
     bottom: 0.05vw;
 }
-
-.side-bar {
+.side-bar,.side-bar-cell {
     display: flex;
     background-image: url("/img/background.png");
     background-size: 100% auto;
@@ -148,7 +164,7 @@ button_header button:hover {
     background-color: #15081D;
 }
 
-#side-bar-itens {
+#side-bar-itens,.side-bar-cell button{
     display: flex;
     width: 100%;
     height: 85vh;
@@ -157,7 +173,7 @@ button_header button:hover {
     justify-content: space-evenly;
     padding-top: 1.5vw;
 }
-.options{
+#options{
     display: none;
 }
 .border-line {
@@ -188,6 +204,7 @@ button_header button:hover {
     height: 4.1vw;
     display: flex;
     align-items: center;
+    flex-direction: row;
 }
 
 #side-bar-itens button:hover {
@@ -469,7 +486,7 @@ button {
     align-items: center;
     justify-content: center;
     width: 100%;
-    background: #321245;
+    background: #0f0016;
     border-bottom-left-radius: 7vh;
     border-bottom-right-radius: 7vh;
 
@@ -758,12 +775,6 @@ button {
     .favorite-star{
         height: 15vh;
     }
-.side-bar-cell{
-    position: absolute;
-    background-image: url(/img/background.png);
-    border-top-right-radius: 7vh;
-    border-bottom-right-radius: 7vh;
-}
     #banner{
         width: 100vw;
         flex-direction: column;
@@ -867,7 +878,7 @@ button {
         height: 5vh;
 
     }
-    .options{
+    #options{
     display: block;
     width: 4vw;
     height: 2vh;
@@ -889,6 +900,40 @@ button {
         margin-top: 2vh;
         align-self: flex-end;
 
+    }
+    .rollback {
+        position: fixed;
+        bottom: 5vh;
+        right: 2vw;
+        height: 0.5vh;
+        width: 0.5vw;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0.4vh solid;
+        padding: 5vw;
+        z-index: 900;
+        opacity: 25%;
+    }
+    .side-bar-cell{
+        position: absolute;
+        background-image: url(/img/background.png);
+        border-top-right-radius: 7vh;
+        border-bottom-right-radius: 7vh;
+        z-index: 1000;
+        width: 50vw;
+        display: block;
+        background-size: unset;
+        background-color: unset;
+    }
+    .side-bar-cell button{
+        padding: 1rem 0;
+        margin: 0 1rem;
+        flex-direction: row;
+    }
+    .rollback-initial{
+        display:none;
     }
     .pressed{
         padding: 2.4vh;

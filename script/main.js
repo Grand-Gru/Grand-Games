@@ -10,11 +10,14 @@ const selectSort = document.getElementById("order");
 const buttonPressed = document.getElementsByClassName("pressed");
 const options = document.getElementById("options");
 const sideBar = document.getElementById("side-bar");
+const rollback = document.getElementById("rollback");
 //Criando Eventos
-window.onscroll = function (e) {
-    if ((window.innerHeight + window.scrollY + 100) >= document.body.offsetHeight)
+window.onscroll = function (e) {    
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
         createElements();
-
+        rollback.classList.remove("rollback-initial");
+        rollback.classList.add("rollback");
+    }
 };
 
 selectSort.addEventListener('change', e => changeGames());
@@ -24,22 +27,18 @@ document.getElementById("flex-logo").addEventListener('click', e =>{
 location.reload();
 })
 
-options.addEventListener('click', e =>{
-showSideBar();
-})
-
-function showSideBar(){
-    if(sideBar.className === "side-bar"){
+document.addEventListener( "click", (e) => {
+    if(e.target === options && sideBar.className === 'side-bar'){
         sideBar.classList.remove("side-bar");
         sideBar.classList.remove("side-bar");
         sideBar.classList.add("side-bar-cell");
-}
+    }
     else{
         sideBar.classList.remove("side-bar-cell");
         sideBar.classList.add("side-bar");
     }
-    
-}
+
+})
 
 for (const button of button_header.children) { // cria eventos para quando um botão do header é apertado
 
