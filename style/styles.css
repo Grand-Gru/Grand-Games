@@ -1,29 +1,947 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+*{
+    font-family: 'Play';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 100%;
+    color: #FFF;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+.rollback{
+    position: fixed;
+    bottom: 5vh;
+    right: 0.5vw;
+    height: 2vh;
+    width: 1vw;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    margin: 0px
+    border: 0.4vh solid;
+    padding: 1vw;
+    z-index: 900;
+    opacity: 25%;
+}
+.rollback-initial{
+    display:none;
+}
+header {
+    width: 100%;
+    height: 10.25vh;
+    background: linear-gradient(270deg, #531877 -0.21%, #0F0416 100.14%);
+}
+h2{    
+    font-size: 2rem;
+}
+.card-content {
+    display: flex;
+    padding-bottom: 3vh;
 }
 
-#banner{
-    width: 73%;
-    height: 400px;
-    text-decoration: none;
-    background: #C4C4C4;
-    background-attachment: fixed;
-    background-repeat:no-repeat;
-    background-size: 100%;
+.flex-header {
+    display: flex;
+    height: 9.25vh;
 }
-#games{
-    display: grid;
-    grid-template-columns: auto auto auto;
+.flex-logo {
+    display: flex;
+    height: 9.25vh;
+    cursor: pointer;
+    width: 11vw;
+}
+
+.controller {
+    position: relative;
+    top: 6%;
+}
+
+.header-title .games {
+    margin-left: 41%;
+}
+
+.header-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 1vw;
+}
+
+.header-title span {
+
+    line-height: 80%;
+    display: flex;
+    align-items: center;
+
+    flex-direction: column;
+    justify-content: center;
+    margin-left: -2%;
+}
+
+.header-options {
+    width: 40.51vw;
+    display: flex;
+    justify-content: center;
+    padding-left: 30%;
+    align-items: center;
+}
+
+.header-options span {
+    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+}
+
+
+
+header button {
+    cursor: pointer;
+    background: none;
+    width: 35%;
+    height: 2.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    margin-left: 3vw;
+    border-radius: 0.5vw;
+}
+
+button_header button:hover {
+    background: #15081D;
+}
+
+#pc{
+    transition: 0.5s;
+}
+#browser{
+    transition: 0.5s;
+}
+#all{
+    transition: 0.5s;
+}
+#favoritos{
+    transition: 0.5s;
+}
+
+.footer a{
+    font-size: 1.5rem;
+}
+
+.pressed{
+    background: #15081D;
+    transition: 0.5s;
+} 
+
+.header-neon {
+    position: relative;
+    z-index: 2;
+    border: none;
+    box-shadow:
+        0 0 0.1vw 0.11vw #fff7f7,
+        0 0 0.4vw 0.3vw #fb37ff,
+        0 0 4vw 0.4vw #320036b3,
+        0 0 4vw 0.4vw #8a1059cc,
+
+        inset 0 0 1.5vw 0.4vw #FB37FF,
+        inset 0 0 1.5vw 0.4vw #320036b3,
+        inset 0 0 0.4vw 0.2vw #8a1059cc,
+        inset 0 0 0.5vw 0.2vw #fff7f7;
+    width: 100%;
+    bottom: 0.05vw;
+}
+.side-bar,.side-bar-cell {
+    display: flex;
+    background-image: url("/img/background.png");
+    background-size: 100% auto;
+    background-color: #15081D;
+}
+.main-frame{
+    min-height: 100vh;
+    background-color: #15081D;
+}
+
+#side-bar-itens,.side-bar-cell button{
+    display: flex;
+    width: 100%;
+    height: 85vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 1.5vw;
+}
+#options{
+    display: none;
+}
+.border-line {
+    width: 0;
+    position: relative;
+    z-index: 1;
+    box-shadow:
+        0 0 0.1vw 0.11vw #fff7f7,
+        0 0.3vw 0.4vw 0.3vw #fb37ff,
+        0 0 4vw 0.4vw #320036b3,
+        0 0 4vw 0.4vw #8a1059cc,
+
+        inset 0 0 1.5vw 0.4vw #FB37FF,
+        inset 0 0 1.5vw 0.4vw #320036b3,
+        inset 0 0 0.4vw 0.2vw #8a1059cc,
+        inset 0 0 0.5vw 0.2vw #fff7f7;
+    align-items: flex-end;
+}
+
+#side-bar-itens span {
+    font-size: 1.2rem;
+}
+
+#side-bar-itens button {
+    cursor: pointer;
+    background: none;
+    width: 85%;
+    height: 4.1vw;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+#side-bar-itens button:hover {
+    background: none;
+    border-radius: 1vw;
+}
+#side-bar-itens img {
+    width: 50%;
+}
+
+#home{
+    transition: 0.5s;
+}
+#home:hover {
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #00D1FF,
+        0 0 0.7vw 0.2vw#0085FF,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #00D1FF,
+        inset 0 0 4vw 0.2vw#0085FF;
+        transition: 0.5s;
+}
+#pixel{
+    transition: 0.5s;
+}
+#pixel:hover {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #FFE600,
+        0 0 0.7vw 0.2vw#FFE600,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #FFE600,
+        inset 0 0 4vw 0.2vw#FFF500;
+        transition: 0.5s;
+}
+#space{
+    transition: 0.5s;
+}
+#space:hover {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #05FF00,
+        0 0 0.7vw 0.2vw#24FF00,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #05FF00,
+        inset 0 0 4vw 0.2vw#24FF00;
+        transition: 0.5s;
+}
+#flight{
+    transition: 0.5s;
+}
+#flight:hover {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #FF00A8,
+        0 0 0.7vw 0.2vw#FF003D,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #FF00A8,
+        inset 0 0 4vw 0.2vw#FF003D;
+        transition: 0.5s;
+}
+#mmorpg{
+    transition: 0.5s;
+}
+#mmorpg:hover {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #FFB800,
+        0 0 0.7vw 0.2vw#FF8A00,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #FFB800,
+        inset 0 0 4vw 0.2vw#FF8A00;
+        transition: 0.5s;
+}
+#sci-fi{
+    transition: 0.5s;
+}
+#sci-fi:hover {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #AD00FF,
+        0 0 0.7vw 0.2vw#8000FF,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #AD00FF,
+        inset 0 0 4vw 0.2vw#8000FF;
+        transition: 0.5s;
+}
+
+#shooter{
+    transition: 0.5s;
+}
+#shooter:hover {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #FF0F00,
+        0 0 0.7vw 0.2vw#FF0000,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #FF0F00,
+        inset 0 0 4vw 0.2vw#FF0000;
+        transition: 0.5s;
+}
+#horror{
+    transition: 0.5s;
+}
+#horror:hover {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #595959,
+        0 0 0.7vw 0.2vw#7B7B7B,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #595959,
+        inset 0 0 4vw 0.2vw#7B7B7B;
+        transition: 0.5s;
+}
+
+
+
+#home.pressed {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #00D1FF,
+        0 0 0.7vw 0.2vw#0085FF,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #00D1FF,
+        inset 0 0 4vw 0.2vw#0085FF;
+        
+}
+
+#pixel.pressed {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #FFE600,
+        0 0 0.7vw 0.2vw#FFE600,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #FFE600,
+        inset 0 0 4vw 0.2vw#FFF500;
+}
+
+#space.pressed {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #05FF00,
+        0 0 0.7vw 0.2vw#24FF00,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #05FF00,
+        inset 0 0 4vw 0.2vw#24FF00;
+}
+
+#flight.pressed {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #FF00A8,
+        0 0 0.7vw 0.2vw#FF003D,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #FF00A8,
+        inset 0 0 4vw 0.2vw#FF003D;
+}
+
+#mmorpg.pressed {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #FFB800,
+        0 0 0.7vw 0.2vw#FF8A00,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #FFB800,
+        inset 0 0 4vw 0.2vw#FF8A00;
+}
+
+#sci-fi.pressed {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #AD00FF,
+        0 0 0.7vw 0.2vw#8000FF,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #AD00FF,
+        inset 0 0 4vw 0.2vw#8000FF;
+}
+
+
+#shooter.pressed {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #FF0F00,
+        0 0 0.7vw 0.2vw#FF0000,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #FF0F00,
+        inset 0 0 4vw 0.2vw#FF0000;
+}
+#horror.pressed {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #595959,
+        0 0 0.7vw 0.2vw#7B7B7B,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #595959,
+        inset 0 0 4vw 0.2vw#7B7B7B;
+}
+
+.footer a{
+    text-decoration: none;
+    border-radius: 1vh;
+    padding: 1vw;
+    background: #632389;
+    width: 11vw;
+}
+
+.featuredvideo {
+    height: 50vh;
+    width: 35vw;
+}
+
+
+button {
+    border: hidden;
+
+}
+
+
+.banner-section {
+    background-color: #15081D;
+    width: 78vw;
+
+}
+
+.card-section{
+    width: 100%;
+    background-color: #15081D;
+}
+
+#banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: #0f0016;
+    border-bottom-left-radius: 7vh;
+    border-bottom-right-radius: 7vh;
+
+}
+
+.before-line {
+    display: flex;
     justify-content: space-between;
 }
 
-.card{
+#banner .game-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+#banner .game-title {
+    font-size: 2rem;
+    line-height: 110%;
+    text-align: right;
+    padding-left: 0.5vw;
+
+}
+#banner .footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 2vw;
+    width: 35vw;
+}
+#banner .game-desciption {
+    font-weight: 400;
+    font-size: 1.3rem;
+    padding-left: 1.5vw;
+    width: 35vw;
+}
+
+#banner .developer {
+    font-size: 1rem;
+    align-self: flex-end;
+}
+
+.game-line {
+    padding-top: 5vh;
+    padding-left: 1vw;
+    padding-bottom: 1vh;
+}
+
+.game-line span {
+    font-size: 1.75rem;
+    color: #FF68F0;
+    padding-left: 2.3vw;
+}
+
+.game-line hr {
+    width: 72vw;
+    margin-top: 0;
+    margin-left: 2.5vw;
+    border: none;
+    box-shadow:
+        0 0 0.1vw 0.11vw #fff7f7,
+        0 0 0.4vw 0.3vw #fb37ff,
+        0 0 4vw 0.4vw #320036b3,
+        0 0 4vw 0.4vw #8a1059cc,
+
+        inset 0 0 1.5vw 0.4vw #FB37FF,
+        inset 0 0 1.5vw 0.4vw #320036b3,
+        inset 0 0 0.4vw 0.2vw #8a1059cc,
+        inset 0 0 0.5vw 0.2vw #fff7f7;
+
+}
+
+#games {
+    display: grid;
+    grid-template-columns: 21vw 21vw 21vw;
+    justify-content: space-evenly;
+    gap:5vh 0px;
+}
+
+.mini-banner {
+    display: flex;
+    width: 21vw;
+    flex-direction: column;
+    background: #321245;
+    border-radius: 1vw;
+}
+
+.release-date {
+    display: block;
+    font-weight: 400;
+    font-size: 0.7rem;
+    margin-left: 0.75vw;
+}
+
+.card-content .text-content{
+    margin-left: 1.5vw;
+    max-width: 15vw;
+}
+
+.title {
+    margin-bottom: 0;
+}
+
+.description {
+    width: 18vw;
+    text-overflow:ellipsis;
+    height: 10%;
+    font-weight: 400;
+    font-size: 0.75rem;
+}
+
+.card {
     text-decoration: none;
-    width: 292px;
-    height: 197px;
-    border-radius: 30px;
+    width: 21vw;
+    height: 28vh;
+    border-radius: 1vw;
+}
+
+.home-page {
+    display: flex;
+}
+
+.star {
+    width: 5vw;
+    height: 10vh;
+    background-image: url("../img/star.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: unset;
+    transition: 1s;
+}
+
+.star:hover {
+    background-image: url("../img/star-hover.png")
+}
+
+.shining-star {
+    background-image: url("../img/star-hover.png")
+}
+
+.star-flex{
+    display: flex;
+    align-items: center;
+}
+.select {
+    color: #d189ca;
+    margin-right: 3vh;
+}    
+.select select {
+        cursor: pointer;
+        outline: 0;
+        border: 0;
+        padding: 4px;
+        border-radius: 0px;
+        background: transparent;
+        appearance: none;
+    }
+.select select:focus {
+    background: #15081D;
+
+}
+
+.favorites-flex{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: #15081D;
+    justify-content: center;
+}
+
+.favorite-line{
+
+    width: 30vw;
+    height: 0;
+    border: none;
+    box-shadow:
+        0 0 0.1vw 0.11vw #fff7f7,
+        0 0 0.4vw 0.3vw #fb37ff,
+        0 0 4vw 0.4vw #320036b3,
+        0 0 4vw 0.4vw #8a1059cc,
+
+        inset 0 0 1.5vw 0.4vw #FB37FF,
+        inset 0 0 1.5vw 0.4vw #320036b3,
+        inset 0 0 0.4vw 0.2vw #8a1059cc,
+        inset 0 0 0.5vw 0.2vw #fff7f7;
+
+}
+.game-line-disabled{
+    display:none ;
+}
+.error-message{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+
+}
+@media only screen and (max-width: 821px) and (min-width: 766px){
+
+    #banner{
+        flex-direction: column;
+        border-radius: 2vh;
+        width: 111%;
+        margin-left: 1%;
+    }
+    #banner .game-desciption {
+        width: 75vw;
+    }
+    #banner .footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 4vw;
+        width: 64vw;
+    }
+    #banner .game-title {
+        padding-left: 23.5vw;
+    }
+.featuredvideo{
+    border: 1px solid #b600ff;
+    margin-bottom: 0.4vh;
+    height: 39vh;
+    width: 76vw;
+    }
+.before-line {
+    justify-content: flex-start;
+}
+.select {
+    padding: 1%;
+    padding-left: 19vh;
+}
+.title{
+    margin-top: 0;
+    width: 37vw;
+}
+#side-bar-itens {
+    display: flex;
+    width: 100%;
+    height: 65vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-top: 1.5vw;
+}
+.pressed{
+    padding: 0;
+}
+#banner .game-info {
+    width: 99%;
+    height: 18vh;
+}
+.banner-section {
+    background-color: #15081D;
+    width: 67vw;
+}
+    
+}
+
+@media (max-width: 765px) {
+    .card-section {
+        width: 100vw;
+    }
+    .game-line hr {
+        width: 93vw;
+    }
+    .side-bar{
+        display: none;
+    }
+#banner .game-desciption {
+    width: 83vw;
+    padding-left: 0vw;
+    font-size: 1rem;
+}
+    .title {
+        margin-top: 0;
+        width: 26vw;
+        font-size: 0.7rem;
+    }
+    .star {
+        width: 8vw;
+        height: 4vh;
+        margin-left: 22px;
+    }
+    .mini-banner img{
+        border-bottom: 3px solid #542866;
+    }
+    .favorite-star{
+        height: 15vh;
+    }
+    #banner{
+        width: 100vw;
+        flex-direction: column;
+        border-radius: 4vh;
+    }
+    .featuredvideo {
+        height: auto;
+        width: 100vw;
+        border-bottom: 2px solid #571c5d;
+    }
+        
+    .game-line span {
+        padding-left: 7.3vw;
+    }
+    .select{
+        padding: 1%;
+    }
+    .before-line{
+        width: 94vw;
+        justify-content: space-between;
+    }
+    #banner .game-desciption {
+        width: 80vw;
+        padding-left: 0vw;
+        font-size: 1rem;
+    }
+    #banner .footer {
+        width: 76vw;
+        font-size: 1rem;
+        padding-left: 7.5vw;
+        }
+    #games{
+        display: grid;
+        flex-direction: column;
+        align-items: center;
+        grid-template: auto auto;
+        grid-template-columns: 40vw 39vw;
+    }
+    #banner .game-title{
+        font-size:1.5rem;
+}
+    #banner .developer{
+        margin: 3vh;
+        font-size: 0.7rem;
+    }
+    .mini-banner {
+        width: 40vw;
+        flex-direction: column;
+        border-radius: 1vh;
+        border: 1px solid #3d1d41;
+    } 
+    .header-title{
+        position: relative;
+        left: -3%;
+    }
+    .card-content .text-content{
+        margin-left: 0.8vw;
+        max-width: 60vw;
+    }
+    .release-date {
+        display: none;
+    }
+    .card {
+        align-self: center;
+        width: 40.5vw;
+        height: auto;
+    }
+    .description{
+        display: none;
+    }
+    .footer a{
+        text-decoration: none;
+        border-radius: 1vh;
+        padding: 1vw;
+        background: #632389;
+        width: 58vw;
+    }
+
+    .mini-banner a{
+        display: flex;
+        align-items: center;
+        justify-content:center;
+    }
+    .flex-logo{
+        justify-content: center;
+        width: 90vw;
+    }
+    .header-options {
+        padding-left: 0px;
+    }
+    .card-content {
+        align-items: center;
+    }
+    .flex-header {
+        flex-direction: column;
+        align-items: center;
+        height:auto;
+    }
+    .star-flex button{
+        width: 11vw;
+        height: 5vh;
+
+    }
+    #options{
+    display: block;
+    width: 4vw;
+    height: 2vh;
+    position: relative;
+    top: 12vh;
+    left: 3vw;
+    background-image: url(/img/hambugyuer.png);
+    background-size: cover;
+    }
+    .header-itens{
+        width: 100vw;
+    }
+    header{
+        width: 100vw;
+        height: auto;
+    }
+    .header-neon{
+        margin-bottom:0px;
+        margin-top: 2vh;
+        align-self: flex-end;
+
+    }
+    .rollback {
+        position: fixed;
+        bottom: 5vh;
+        right: 2vw;
+        height: 0.5vh;
+        width: 0.5vw;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0.4vh solid;
+        padding: 5vw;
+        z-index: 900;
+        opacity: 25%;
+    }
+    .side-bar-cell{
+        position: absolute;
+        background-image: url(/img/background.png);
+        border-top-right-radius: 7vh;
+        border-bottom-right-radius: 7vh;
+        z-index: 1000;
+        width: 50vw;
+        display: block;
+        background-size: unset;
+        background-color: unset;
+    }
+    .side-bar-cell button{
+        padding: 1rem 0;
+        margin: 0 1rem;
+        flex-direction: row;
+    }
+    .rollback-initial{
+        display:none;
+    }
+    .pressed{
+        padding: 2.4vh;
+    }
+    #side-bar-itens button:hover{
+        padding: 2.4vh;
+    }
+    #banner .game-info{
+        align-items: center;
+    }
 }

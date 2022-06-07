@@ -1,57 +1,107 @@
 "use strict";
 
-var pages = 0;
+// IMPORTS
+import { createElements, createElementsFavorite } from "./gameCards.js";
 
-const options = { // Declaração das cahves para RapidAPI
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com',
-		'X-RapidAPI-Key': '03c090ac21msh4e7ac00b13dc67cp13104fjsn56d1012cf8b6'
-	}
-};
-
-const createCard = data => { // cria o card e coloca a thumbmail
-    document.getElementById("games").innerHTML += `
-        <a class="card" id="${data.id}" href="${data.game_url}">
-            <h1 class="title">${data.title}</h1>
-        </a>
-    `;
-    document.getElementById(data.id).style.backgroundImage = 'url(' + data.thumbnail +')';
-}
-
-const requestGames = async (params = "") => { // faz o request dos dados
-    const response = await fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games${params}`, options);
-    return await response.json();
-}
-
-const createParams = (tag, platform, sort) => // cria os parametros para busca
-    `?platform=${platform}&sort-by=${sort}${tag ? `&category=${tag}`: ``}` 
-
-const createBanner = data => {// altera o banner
-    document.getElementById("banner").style.backgroundImage = 'url(' + data.thumbnail.replace("thumbnail.jpg","background.webp") +')';
-    document.getElementById("banner").href = data.game_url;
-}
-
-let createCards 
-(createCards = async (offset = 0,tag = "", platform = "all", sort = "relevance") => {
-    const gamesData = await requestGames(createParams(tag, platform, sort));
-    if(offset === 0){
-        createBanner(gamesData[0]);
-        pages=0;
-    }
-    offset *= 9;
-    offset++;
-    for (let i = 0; i < 9 && (offset + i < gamesData.length) ; i++) {
-        let position = offset + i;
-        createCard(gamesData[position]);
-    }
-    pages++;
-
-})();
-
-window.onscroll = function(e) {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        createCards(pages);
+// CONSTANTES
+const button_header = document.getElementById("button_header");
+const sideBarItens = document.getElementById("side-bar-itens");
+const selectSort = document.getElementById("order");
+const buttonPressed = document.getElementsByClassName("pressed");
+const options = document.getElementById("options");
+const sideBar = document.getElementById("side-bar");
+const rollback = document.getElementById("rollback");
+//Criando Eventos
+window.onscroll = function (e) {    
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
+        createElements();
+        rollback.classList.remove("rollback-initial");
+        rollback.classList.add("rollback");
     }
 };
+
+selectSort.addEventListener('change', e => changeGames());
+
+
+document.getElementById("flex-logo").addEventListener('click', e =>{
+location.reload();
+})
+
+document.addEventListener( "click", (e) => {
+    if(e.target === options && sideBar.className === 'side-bar'){
+        sideBar.classList.remove("side-bar");
+        sideBar.classList.remove("side-bar");
+        sideBar.classList.add("side-bar-cell");
+    }
+    else{
+        sideBar.classList.remove("side-bar-cell");
+        sideBar.classList.add("side-bar");
+    }
+
+})
+
+for (const button of button_header.children) { // cria eventos para quando um botão do header é apertado
+
+    button.addEventListener('click', e => {
+
+        if (button.id === 'favoritos') {
+            buttonPressed[0].classList.remove("pressed");
+            buttonPressed[0].classList.remove("pressed");
+
+
+            button.className = 'pressed';
+            document.getElementById("game-line").classList.add("game-line-disabled");
+            document.getElementById("banner").innerHTML = `
+                <div class ="favorites-flex">
+                    <div class="favorite-line"></div>
+                        <img class="favorite-star" src="../img/star-hover.png">
+                    <div class="favorite-line"></div>
+                </div>`;
+                createElementsFavorite();
+        } else {
+            if(buttonPressed.length === 1){
+                document.getElementById("home").classList.add("pressed")
+            }
+            document.getElementById("game-line").classList.remove("game-line-disabled");
+            buttonVerification(button.id);
+        }
+    })
+}
+
+for (const sideBarIten of sideBarItens.children) // cria eventos para quando um botão da sideBar é apertado
+    sideBarIten.addEventListener('click', e => {
+        if (buttonPressed[0].id === 'favoritos') {
+            buttonPressed[0].classList.remove("pressed");
+            document.getElementById("game-line").classList.remove("game-line-disabled");
+            document.getElementById("all").classList.add("pressed");
+        }
+        for (const tagButton of sideBarItens.children)
+            tagButton.classList.remove('pressed');
+        sideBarIten.classList.add('pressed');
+        changeGames();
+    })
+
+// Funções
+
+createElements("home", "popularity", "all");// Cria o primeiro banner e os cards
+
+const changeGames = () => { // pega os parametros para criar novos elementos
+    const options = document.getElementsByClassName("pressed");
+    const sortMethod = document.getElementById("order");
+    const value = sortMethod[sortMethod.selectedIndex].value;
+    createElements(options[1].id, value, options[0].id);//options na posilcao 1 => tag na posicao 0 => plataforma
+}
+
+function buttonVerification(id) {
+    for (const button of button_header.children) {
+        if (button.id === id) {
+            button.className = 'pressed';
+        }
+        else {
+            button.className = '';
+        }
+    }
+    changeGames();
+
+}
 

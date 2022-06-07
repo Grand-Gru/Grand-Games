@@ -6,16 +6,120 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/styles.css">
-    <script  src="script/main.js"></script>
+    <script src="script/main.js" type="module">
+    </script>
+    <script src="script/favorite.js">
+    </script>
     <title>Grand Games</title>
 </head>
 
 <body>
-    <a id="banner">
-    </a>
-    <div id="games">
-    </div>
+    <header id="header">
+        <div class="flex-header">
+            <div class="header-itens">
+                <div>
+                <button id="options">
+            </div>
+            <div class="flex-logo" id="flex-logo">
+                <img class="controller" src="./img/figma.png" alt="Controle neon">
+                <div class="header-title">
+                    <span>Grand</span>
+                    <span class="games">Games</span>
+                </div>
+            </div>
+            </div>
+            <div id="button_header" class="header-options">
+                <button type="button" id="pc">PC</button>
+                <button type="button" id="browser">Browser</button>
 
+                <button type="button" class="pressed" id="all">All</button>
+                <button type="button" id="favoritos">Favorites</button>
+            </div>
+        </div>
+        <hr class="header-neon">
+    </header>
+
+    <section class="home-page">
+        <div class="side-bar" id="side-bar">
+            <div id="side-bar-itens">
+
+                <button id="home" class="pressed" type="button">
+                    <img src="./img/TESTE.png" alt="">
+                    <span>Home</span>
+                </button>
+
+                <button id="pixel" type="button">
+                    <img src="./img/pixel.png" alt="">
+                    <span>Pixel</span>
+                </button>
+
+                <button id="space" type="button">
+                    <img src="./img/space.png" alt="">
+                    <span>Space</span>
+                </button>
+
+                <button id="flight" type="button">
+                    <img src="./img/flighting.png" alt="">
+                    <span>Flighting</span>
+                </button>
+
+                <button id="mmorpg" type="button">
+                    <img src="./img/mmo.png" alt="">
+                    <span>MMORPG</span>
+                </button>
+
+                <button id="sci-fi" type="button">
+                    <img src="./img/sci-fi.png" alt="">
+                    <span>Sci-fi</span>
+                </button>
+
+                <button id="shooter" type="button">
+                    <img src="./img/shooting.png" alt="">
+                    <span>Shooting</span>
+                </button>
+                <button id="horror" type="button">
+                    <img src="./img/horror.png" alt="">
+                    <span>Horror</span>
+                </button>
+            </div>
+            <div class="border-line">
+            </div>
+        </div>
+        <div class="main-frame">
+            <div class="banner-section">
+                <div id="banner">
+
+                </div>
+            </div>
+
+            <section class="card-section">
+                <div id="game-line" class="game-line">
+                    <div class="before-line">
+                        <span id="titles">Games</span>
+                        <div class="select">
+                            Sort By:
+                            <select id="order">
+                                <option value="poularity">Popularity</option>
+                                <option value="release_date">Release Date</option>
+                                <option value="alphabetical">Alphabetical</option>
+                            </select>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div>
+                    <a href="#header">
+                        <div class="rollback-initial" id ="rollback">
+                            <img src="/img/Union.png">
+                        </div>
+                    </a>
+                </div>
+                <div id="games">
+                    
+                </div>
+            </section>
+        </div>
+    </section>
 
 </body>
 
