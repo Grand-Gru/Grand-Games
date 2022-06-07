@@ -452,6 +452,7 @@ button_header button:hover {
 }
 
 .footer a{
+    text-align: center;
     text-decoration: none;
     border-radius: 1vh;
     padding: 1vw;
