@@ -136,7 +136,9 @@ header button:hover {
     justify-content: space-evenly;
     padding-top: 1.5vw;
 }
-
+.options{
+    display: none;
+}
 .border-line {
     width: 0;
     position: relative;
@@ -491,8 +493,67 @@ button {
     height: 100vh;
     margin-left: 14vw;
 }
+@media only screen and (max-width: 821px) and (min-width: 766px){
 
-@media (max-width: 800px) {
+    #banner{
+        flex-direction: column;
+        border-radius: 2vh;
+        width: 111%;
+        margin-left: 1%;
+    }
+    #banner .game-desciption {
+        width: 75vw;
+    }
+    #banner .footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 4vw;
+        width: 64vw;
+    }
+    #banner .game-title {
+        padding-left: 23.5vw;
+    }
+.featuredvideo{
+    border: 1px solid #b600ff;
+    margin-bottom: 0.4vh;
+    height: 39vh;
+    width: 76vw;
+    }
+.before-line {
+    justify-content: flex-start;
+}
+.select {
+    padding: 1%;
+    padding-left: 19vh;
+}
+.title{
+    margin-top: 0;
+    width: 37vw;
+}
+#side-bar-itens {
+    display: flex;
+    width: 100%;
+    height: 65vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-top: 1.5vw;
+}
+.pressed{
+    padding: 0;
+}
+#banner .game-info {
+    width: 99%;
+    height: 18vh;
+}
+.banner-section {
+    background-color: #15081D;
+    width: 67vw;
+}
+    
+}
+
+@media (max-width: 765px) {
     .card-section {
         width: 100vw;
     }
@@ -502,32 +563,92 @@ button {
     .side-bar{
         display: none;
     }
+#banner .game-desciption {
+    width: 83vw;
+    padding-left: 0vw;
+    font-size: 1rem;
+}
+    .title {
+        margin-top: 0;
+        width: 26vw;
+        font-size: 0.7rem;
+    }
+    .star {
+        width: 8vw;
+        height: 4vh;
+        position: relative;
+        top: -0.4vh;
+        left: 5vw;
+    }
+    .mini-banner img{
+        border-bottom: 3px solid #542866;
+    }
+    .favorite-star{
+        height: 15vh;
+    }
+    .favorites-flex{
+        justify-content: flex-start;
+    }
     #banner{
         width: 100vw;
         flex-direction: column;
+        border-radius: 4vh;
     }
-    .featuredvideo{
+    .featuredvideo {
         height: auto;
         width: 100vw;
+        border-bottom: 2px solid #571c5d;
     }
-    .game-title{
-        font-size:1.5rem;
+        
+    .game-line span {
+        padding-left: 7.3vw;
     }
-    #banner .game-desciption{
-        width: 95vw;
-        font-size:1rem;
+    .select{
+        padding: 1%;
+    }
+    .before-line{
+        width: 94vw;
+        justify-content: space-between;
+    }
+    #banner .game-desciption {
+        width: 80vw;
+        padding-left: 0vw;
+        font-size: 1rem;
     }
     #banner .footer {
-        width: 90vw;
-    }
+        width: 76vw;
+        font-size: 1rem;
+        padding-left: 7.5vw;
+        }
     #games{
-        display: flex;
+        display: grid;
         flex-direction: column;
         align-items: center;
+        grid-template: auto auto;
+        grid-template-columns: 40vw 39vw;
+    }
+    #banner .game-title{
+        font-size:1.5rem;
+        padding-left: 21vw;
+}
+    #banner .developer{
+        margin: 3vh;
+        font-size: 0.7rem;
     }
     .mini-banner {
-        width: 93vw;
-        flex-direction: row;
+        width: 40vw;
+        flex-direction: column;
+        border-radius: 1vh;
+        border: 1px solid #3d1d41;
+    }
+    .controller {
+        position: relative;
+        top: 1%;
+        left: 6%;
+    }    
+    .header-title{
+        position: relative;
+        left: -9%;
     }
     .card-content .text-content{
         margin-left: 0.8vw;
@@ -538,24 +659,56 @@ button {
     }
     .card {
         align-self: center;
-        width: 40vw;
+        width: 40.5vw;
         height: auto;
     }
+    .description{
+        display: none;
+    }
+    .footer a{
+        text-decoration: none;
+        border-radius: 1vh;
+        padding: 1vw;
+        background: #632389;
+    }
+
     .mini-banner a{
         display: flex;
         align-items: center;
         justify-content:center;
     }
-
+    .flex-logo{
+        justify-content: center;
+    }
     .header-options {
         padding-left: 0px;
+    }
+    .card-content {
+        align-items: center;
     }
     .flex-header {
         flex-direction: column;
         align-items: center;
         height:auto;
     }
+    .options{
+        display:initial;
+        width: 3vh;
+        position: relative;
+        top: 9vh;
+        left: 3vw;
+    }
+    .header-itens{
+        width: 100vw;
+    }
     header{
-        height: auto
+        width: 100vw;
+        height: auto;
+    }
+    .header-neon{
+        margin-bottom:0px;
+        margin-top: 2vh;
+        align-self: flex-end;
+
     }
 }
