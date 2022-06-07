@@ -155,7 +155,7 @@ button_header button:hover {
 }
 .side-bar,.side-bar-cell {
     display: flex;
-    background-image: url("../img/background.png");
+    background-image: url("./../img/background.png");
     background-size: 100% auto;
     background-color: #15081D;
 }
