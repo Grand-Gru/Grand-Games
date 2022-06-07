@@ -1,6 +1,6 @@
 "use strict";
 
-import { GAMES_DATA, filterGameInfoByTag } from "./gameData.js";
+import { GAMES_DATA, filterGameInfoByTag } from "./gameData.js";// importando dados
 
 
 const createBanner = data => {// altera o banner
