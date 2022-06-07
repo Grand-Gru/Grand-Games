@@ -5,7 +5,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 1rem;
-    line-height: 150%;
+    line-height: 100%;
     color: #FFF;
 }
 body {
@@ -23,6 +23,7 @@ h2{
 }
 .card-content {
     display: flex;
+    padding-bottom: 3vh;
 }
 
 .flex-header {
@@ -32,6 +33,7 @@ h2{
 .flex-logo {
     display: flex;
     height: 9.25vh;
+    cursor: pointer;
 }
 
 .controller {
@@ -94,8 +96,26 @@ header button:hover {
     background: #15081D;
 }
 
+#pc{
+    transition: 0.5s;
+}
+#browser{
+    transition: 0.5s;
+}
+#all{
+    transition: 0.5s;
+}
+#favoritos{
+    transition: 0.5s;
+}
+
+.footer a{
+    font-size: 1.5rem;
+}
+
 .pressed{
     background: #15081D;
+    transition: 0.5s;
 } 
 
 .header-neon {
@@ -177,6 +197,9 @@ header button:hover {
     width: 50%;
 }
 
+#home{
+    transition: 0.5s;
+}
 #home:hover {
     box-shadow:
         0 0 0.1vw 0.12vw #FFFFFF,
@@ -186,6 +209,10 @@ header button:hover {
         inset 0 0 0.1vw 0.1vw #fff7f7,
         inset 0 0 1vw 0.1vw #00D1FF,
         inset 0 0 4vw 0.2vw#0085FF;
+        transition: 0.5s;
+}
+#pixel{
+    transition: 0.5s;
 }
 #pixel:hover {
     background: none;
@@ -198,8 +225,11 @@ header button:hover {
         inset 0 0 0.1vw 0.1vw #fff7f7,
         inset 0 0 1vw 0.1vw #FFE600,
         inset 0 0 4vw 0.2vw#FFF500;
+        transition: 0.5s;
 }
-
+#space{
+    transition: 0.5s;
+}
 #space:hover {
     background: none;
     border-radius: 1vw;
@@ -211,8 +241,11 @@ header button:hover {
         inset 0 0 0.1vw 0.1vw #fff7f7,
         inset 0 0 1vw 0.1vw #05FF00,
         inset 0 0 4vw 0.2vw#24FF00;
+        transition: 0.5s;
 }
-
+#flight{
+    transition: 0.5s;
+}
 #flight:hover {
     background: none;
     border-radius: 1vw;
@@ -224,8 +257,11 @@ header button:hover {
         inset 0 0 0.1vw 0.1vw #fff7f7,
         inset 0 0 1vw 0.1vw #FF00A8,
         inset 0 0 4vw 0.2vw#FF003D;
+        transition: 0.5s;
 }
-
+#mmorpg{
+    transition: 0.5s;
+}
 #mmorpg:hover {
     background: none;
     border-radius: 1vw;
@@ -237,8 +273,11 @@ header button:hover {
         inset 0 0 0.1vw 0.1vw #fff7f7,
         inset 0 0 1vw 0.1vw #FFB800,
         inset 0 0 4vw 0.2vw#FF8A00;
+        transition: 0.5s;
 }
-
+#sci-fi{
+    transition: 0.5s;
+}
 #sci-fi:hover {
     background: none;
     border-radius: 1vw;
@@ -250,13 +289,12 @@ header button:hover {
         inset 0 0 0.1vw 0.1vw #fff7f7,
         inset 0 0 1vw 0.1vw #AD00FF,
         inset 0 0 4vw 0.2vw#8000FF;
+        transition: 0.5s;
 }
 
-.featuredvideo {
-    height: 50vh;
-    width: 35vw;
+#shooter{
+    transition: 0.5s;
 }
-
 #shooter:hover {
     background: none;
     border-radius: 1vw;
@@ -268,6 +306,10 @@ header button:hover {
         inset 0 0 0.1vw 0.1vw #fff7f7,
         inset 0 0 1vw 0.1vw #FF0F00,
         inset 0 0 4vw 0.2vw#FF0000;
+        transition: 0.5s;
+}
+#horror{
+    transition: 0.5s;
 }
 #horror:hover {
     background: none;
@@ -280,7 +322,123 @@ header button:hover {
         inset 0 0 0.1vw 0.1vw #fff7f7,
         inset 0 0 1vw 0.1vw #595959,
         inset 0 0 4vw 0.2vw#7B7B7B;
+        transition: 0.5s;
 }
+
+
+
+#home.pressed {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #00D1FF,
+        0 0 0.7vw 0.2vw#0085FF,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #00D1FF,
+        inset 0 0 4vw 0.2vw#0085FF;
+        
+}
+
+#pixel.pressed {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #FFE600,
+        0 0 0.7vw 0.2vw#FFE600,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #FFE600,
+        inset 0 0 4vw 0.2vw#FFF500;
+}
+
+#space.pressed {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #05FF00,
+        0 0 0.7vw 0.2vw#24FF00,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #05FF00,
+        inset 0 0 4vw 0.2vw#24FF00;
+}
+
+#flight.pressed {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #FF00A8,
+        0 0 0.7vw 0.2vw#FF003D,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #FF00A8,
+        inset 0 0 4vw 0.2vw#FF003D;
+}
+
+#mmorpg.pressed {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #FFB800,
+        0 0 0.7vw 0.2vw#FF8A00,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #FFB800,
+        inset 0 0 4vw 0.2vw#FF8A00;
+}
+
+#sci-fi.pressed {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #AD00FF,
+        0 0 0.7vw 0.2vw#8000FF,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #AD00FF,
+        inset 0 0 4vw 0.2vw#8000FF;
+}
+
+
+#shooter.pressed {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #FF0F00,
+        0 0 0.7vw 0.2vw#FF0000,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #FF0F00,
+        inset 0 0 4vw 0.2vw#FF0000;
+}
+#horror.pressed {
+    background: none;
+    border-radius: 1vw;
+    box-shadow:
+        0 0 0.1vw 0.12vw #FFFFFF,
+        0 0 0.5vw 0.2vw #595959,
+        0 0 0.7vw 0.2vw#7B7B7B,
+
+        inset 0 0 0.1vw 0.1vw #fff7f7,
+        inset 0 0 1vw 0.1vw #595959,
+        inset 0 0 4vw 0.2vw#7B7B7B;
+}
+
+
+
+.featuredvideo {
+    height: 50vh;
+    width: 35vw;
+}
+
 
 button {
     border: hidden;
@@ -304,7 +462,7 @@ button {
     align-items: center;
     justify-content: center;
     width: 100%;
-    background: linear-gradient(270deg, #0F0416 -0.21%, #3e1259 100.14%);
+
 }
 
 .before-line {
@@ -432,6 +590,7 @@ button {
     background-size: cover;
     background-repeat: no-repeat;
     background-color: unset;
+    transition: 1s;
 }
 
 .star:hover {
@@ -442,6 +601,10 @@ button {
     background-image: url("../img/star-hover.png")
 }
 
+.star-flex{
+    display: flex;
+    align-items: center;
+}
 .select {
     color: #d189ca;
 }    
@@ -491,7 +654,7 @@ button {
     display: flex;
     align-items: center;
     height: 100vh;
-    margin-left: 14vw;
+
 }
 @media only screen and (max-width: 821px) and (min-width: 766px){
 
