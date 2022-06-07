@@ -155,7 +155,7 @@ button_header button:hover {
 }
 .side-bar,.side-bar-cell {
     display: flex;
-    background-image: url("./img/background.png");
+    background-image: url("../img/background.png");
     background-size: 100% auto;
     background-color: #15081D;
 }
@@ -621,11 +621,11 @@ button {
 }
 
 .star:hover {
-    background-image: url("./img/star-hover.png")
+    background-image: url("../img/star-hover.png")
 }
 
 .shining-star {
-    background-image: url("./img/star-hover.png")
+    background-image: url("../img/star-hover.png")
 }
 
 .star-flex{
@@ -885,7 +885,7 @@ button {
     position: relative;
     top: 12vh;
     left: 3vw;
-    background-image: url(./img/hambugyuer.png);
+    background-image: url(../img/hambugyuer.png);
     background-size: cover;
     }
     .header-itens{
@@ -918,7 +918,7 @@ button {
     }
     .side-bar-cell{
         position: absolute;
-        background-image: url(./img/background.png);
+        background-image: url(../img/background.png);
         border-top-right-radius: 7vh;
         border-bottom-right-radius: 7vh;
         z-index: 1000;
