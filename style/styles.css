@@ -599,6 +599,10 @@ button {
     background-image: url("../img/star-hover.png")
 }
 
+.star-flex{
+    display: flex;
+    align-items: center;
+}
 .select {
     color: #d189ca;
 }    
