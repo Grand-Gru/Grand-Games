@@ -54,7 +54,7 @@ for (const button of button_header.children) { // cria eventos para quando um bo
             document.getElementById("banner").innerHTML = `
                 <div class ="favorites-flex">
                     <div class="favorite-line"></div>
-                        <img class="favorite-star" src="../img/star-hover.png">
+                        <img class="favorite-star" src="./img/star-hover.png">
                     <div class="favorite-line"></div>
                 </div>`;
                 createElementsFavorite();

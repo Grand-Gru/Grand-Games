@@ -128,6 +128,7 @@ button_header button:hover {
 }
 
 .footer a{
+    text-align: center;
     font-size: 1.5rem;
 }
 
@@ -155,7 +156,7 @@ button_header button:hover {
 }
 .side-bar,.side-bar-cell {
     display: flex;
-    background-image: url("/img/background.png");
+    background-image: url("../img/background.png");
     background-size: 100% auto;
     background-color: #15081D;
 }
@@ -451,6 +452,7 @@ button_header button:hover {
 }
 
 .footer a{
+    text-align: center;
     text-decoration: none;
     border-radius: 1vh;
     padding: 1vw;
@@ -918,7 +920,7 @@ button {
     }
     .side-bar-cell{
         position: absolute;
-        background-image: url(/img/background.png);
+        background-image: url(../img/background.png);
         border-top-right-radius: 7vh;
         border-bottom-right-radius: 7vh;
         z-index: 1000;
