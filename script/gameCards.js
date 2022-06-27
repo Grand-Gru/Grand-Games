@@ -58,7 +58,7 @@ const createCard = data => { // cria o card e coloca a thumbmail
 
 
 const filterGamesInfo = async (tag, sortMethod, platform, fav = false) => { // filtra as informações do jogo
-    let gamesInfo = GAMES_DATA;
+    let gamesInfo = [...GAMES_DATA];
 
     if(tag !== "home" && tag)
         gamesInfo = await filterGameInfoByTag(tag);
