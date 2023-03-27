@@ -621,11 +621,11 @@ button {
     background-color: unset;
     transition: 1s;
 }
-
+@media (min-width:961px){
 .star:hover {
     background-image: url("../img/star-hover.png")
 }
-
+}
 .shining-star {
     background-image: url("../img/star-hover.png")
 }
