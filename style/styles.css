@@ -747,7 +747,7 @@ button {
 }
 
 @media (max-width: 765px) {
-    .#side-bar-itens button{
+    #side-bar-itens button{
     justify-content: flex-start;
     }
     
